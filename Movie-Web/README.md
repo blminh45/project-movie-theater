@@ -29,11 +29,14 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
     - composer -V to check install success composer
 
 ## install source
+open cmder from laragon
 1. composer install
 2. composer require laravel/ui
 3. php artisan ui bootstrap
 4. php artisan ui bootstrap --auth
 5. npm install
 6. npm run dev
+7. cp .env.example .env
+8. php artisan key:generate
 
 - --
