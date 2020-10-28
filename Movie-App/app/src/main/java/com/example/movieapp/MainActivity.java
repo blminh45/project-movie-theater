@@ -21,5 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public void Login(View view) {
     }
     public void ListPhim(View view) {
+        Intent intent=new Intent(this,ListMovieActivity.class);
+        startActivity(intent);
     }
 }
