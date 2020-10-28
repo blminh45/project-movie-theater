@@ -39,16 +39,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginBottom="10dp">
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"/>
-        <Button
-            android:id="@+id/choose_image_btn"
-            android:text="Chọn ảnh đại diện"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="chooseImage"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
             android:layout_width="match_parent"
@@ -113,6 +104,20 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/choose_image_btn"
+            android:text="Chọn ảnh đại diện"
+            android:layout_width="match_parent"
+            android:background="#000"
+            android:textColor="#fff"
+            android:layout_height="wrap_content"
+            android:onClick="chooseImage"/>
+        <ImageView
+            android:id="@+id/img"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout></ScrollView>
     <Button
         android:layout_width="match_parent"
