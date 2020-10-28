@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     public void NowSlide(View view) {
         Intent intent=new Intent(this,NowSlide.class);
         startActivity(intent);
-
     }
     public void WillSlide(View view) {
         Intent intent=new Intent(this,WillSlide.class);
@@ -24,4 +23,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,ListMovieActivity.class);
         startActivity(intent);
     }
+
+
 }
