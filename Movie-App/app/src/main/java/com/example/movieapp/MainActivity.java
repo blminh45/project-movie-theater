@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,ListMovieActivity.class);
+                Intent intent = new Intent(MainActivity.this,DetailMovieActivity.class);
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this);
                 startActivity(intent,options.toBundle());
                 finish();
