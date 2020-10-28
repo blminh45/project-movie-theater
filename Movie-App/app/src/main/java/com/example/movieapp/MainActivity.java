@@ -48,4 +48,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,SignUpActivity.class);
         startActivity(intent);
     }
+
+    public void profile(View view) {
+        Intent intent=new Intent(this,ProfileActivity.class);
+        startActivity(intent);
+    }
 }
