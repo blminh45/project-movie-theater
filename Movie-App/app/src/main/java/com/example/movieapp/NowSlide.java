@@ -1,5 +1,6 @@
 package com.example.movieapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -38,5 +39,9 @@ public class NowSlide extends AppCompatActivity {
 
     public void Back(View view) {
         finish();
+    }
+    public void DatVe(View view) {
+        Intent intent = new Intent(this, PayActivity.class);
+        startActivity(intent);
     }
 }

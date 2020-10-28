@@ -1,5 +1,6 @@
 package com.example.movieapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -41,5 +42,7 @@ public class WillSlide extends AppCompatActivity {
     }
 
     public void DatVe(View view) {
+        Intent intent = new Intent(this, PayActivity.class);
+        startActivity(intent);
     }
 }
