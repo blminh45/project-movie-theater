@@ -14,8 +14,5 @@ public class DetailMovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
     }
-    public void watchtrailer(View view) {
-        Intent trailer = new Intent(Intent.ACTION_VIEW , Uri.parse("https://youtu.be/Q6iK6DjV_iE"));
-        startActivity(trailer);
     }
 }
