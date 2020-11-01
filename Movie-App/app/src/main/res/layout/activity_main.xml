@@ -7,13 +7,29 @@
     android:background="#F08080"
     tools:context=".MainActivity">
 
+   <com.google.android.material.appbar.AppBarLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/ic_launcher_background"
+       android:theme="@style/AppTheme.AppBarOverlay"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize"
+          android:background="@color/ic_launcher_background"
+          app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+   </com.google.android.material.appbar.AppBarLayout>
 
    <Button
        android:id="@+id/btnNow"
        android:layout_width="153dp"
        android:layout_height="53dp"
        android:layout_marginStart="120dp"
-       android:layout_marginTop="324dp"
+       android:layout_marginTop="364dp"
        android:background="@android:drawable/button_onoff_indicator_off"
        android:onClick="NowSlide"
        android:text="Xem thêm"
@@ -34,10 +50,10 @@
 
    <ImageView
        android:id="@+id/imageView2"
-       android:layout_width="190dp"
-       android:layout_height="148dp"
-       android:layout_marginEnd="280dp"
-       android:layout_marginBottom="650dp"
+       android:layout_width="235dp"
+       android:layout_height="177dp"
+       android:layout_marginEnd="88dp"
+       android:layout_marginBottom="560dp"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:srcCompat="@drawable/logo" />
@@ -47,7 +63,7 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginStart="4dp"
-       android:layout_marginTop="138dp"
+       android:layout_marginTop="178dp"
        android:text="Top 5 phim đang chiếu"
        android:textColor="@android:color/background_dark"
        android:textSize="30sp"
@@ -59,7 +75,7 @@
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:layout_marginStart="4dp"
-       android:layout_marginTop="372dp"
+       android:layout_marginTop="412dp"
        android:text="Top 5 phim sắp chiếu"
        android:textColor="@android:color/background_dark"
        android:textSize="30sp"
@@ -71,7 +87,7 @@
        android:layout_width="201dp"
        android:layout_height="109dp"
        android:layout_marginStart="4dp"
-       android:layout_marginTop="204dp"
+       android:layout_marginTop="244dp"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:srcCompat="@drawable/phim6" />
@@ -80,7 +96,7 @@
        android:id="@+id/imageView8"
        android:layout_width="215dp"
        android:layout_height="153dp"
-       android:layout_marginTop="183dp"
+       android:layout_marginTop="223dp"
        app:layout_constraintStart_toEndOf="@+id/imageView3"
        app:layout_constraintTop_toTopOf="parent"
        app:srcCompat="@drawable/phim10" />
@@ -90,7 +106,7 @@
        android:layout_width="194dp"
        android:layout_height="108dp"
        android:layout_marginStart="4dp"
-       android:layout_marginTop="420dp"
+       android:layout_marginTop="460dp"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:srcCompat="@drawable/phim1" />
@@ -99,59 +115,12 @@
        android:id="@+id/imageView11"
        android:layout_width="210dp"
        android:layout_height="107dp"
-       android:layout_marginTop="420dp"
+       android:layout_marginTop="460dp"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="1.0"
        app:layout_constraintStart_toEndOf="@+id/imageView10"
        app:layout_constraintTop_toTopOf="parent"
        app:srcCompat="@drawable/phim2" />
-
-   <TextView
-       android:id="@+id/textView10"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginEnd="80dp"
-       android:onClick="Login"
-       android:text="Đăng nhập"
-       android:textColor="@android:color/background_dark"
-       android:textSize="20sp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
-
-   <TextView
-       android:id="@+id/textView22"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:onClick="Singup"
-       android:text="Đăng ký"
-       android:textColor="@android:color/background_dark"
-       android:textSize="20sp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
-
-   <TextView
-       android:id="@+id/textView11"
-       android:layout_width="153dp"
-       android:layout_height="53dp"
-       android:layout_marginStart="136dp"
-       android:layout_marginTop="68dp"
-       android:gravity="center"
-       android:onClick="ListPhim"
-       android:text="Danh sách phim"
-       android:textColor="@android:color/background_dark"
-       android:textSize="20sp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
-
-   <Button
-       android:id="@+id/button2"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginStart="132dp"
-       android:onClick="profile"
-       android:text="Button"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
