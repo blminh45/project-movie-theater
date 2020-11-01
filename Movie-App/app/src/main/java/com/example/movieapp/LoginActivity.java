@@ -24,6 +24,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
     }
 
     public void callSignUp(View view) {
@@ -32,8 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         image = findViewById(R.id.logo_image);
         logoText = findViewById(R.id.slogan);
         sloganText = findViewById(R.id.ex);
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
         btn_login = findViewById(R.id.login);
         SignUp = findViewById(R.id.signup);
         Pair[] pairs = new Pair[7];
@@ -47,5 +47,41 @@ public class LoginActivity extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this,pairs);
         startActivity(intent,options.toBundle());
         finish();
+    }
+    private Boolean validateUsername(){
+        String val = username.getEditText().getText().toString();
+        String noWhiteSpace ="\\A\\w{4,20}\\z";
+        if(val.isEmpty())
+        {
+            username.setError("Tài khoản không hợp lệ !!!");
+            return false;
+        }else if(!val.matches(noWhiteSpace)){
+            username.setError("Tài khoản không được chứa khoảng trắng");
+            return false;
+        }
+        else{
+            username.setError(null);
+            username.setErrorEnabled(false);
+            return true;
+        }
+    }
+    private Boolean validatePassword(){
+        String val = password.getEditText().getText().toString();
+        if(val.isEmpty())
+        {
+            password.setError("Mật khẩu còn trống !!!");
+            return false;
+        }
+        else
+        {
+            password.setError(null);
+            password.setErrorEnabled(false);
+            return true;
+        }
+    }
+    public void validateUser(View view) {
+        if(!validateUsername()| !validatePassword()){
+            return;
+        }
     }
 }
