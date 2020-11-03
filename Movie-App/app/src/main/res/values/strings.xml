@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="facebook_app_id">712769945999453</string> <string name="fb_login_protocol_scheme">fb712769945999453</string>
 </resources>
