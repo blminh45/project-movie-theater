@@ -3,10 +3,12 @@ package com.example.movieapp;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -17,6 +19,13 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 public class LoginActivity extends AppCompatActivity {
 
@@ -24,8 +33,14 @@ public class LoginActivity extends AppCompatActivity {
     ImageView image;
     TextView logoText,sloganText;
     TextInputLayout username,password;
+    SignInButton loginGg;
+    GoogleSignInClient mGoogleSignInClient;
+    int RC_SIGN_IN = 0 ;
     private LoginButton login;
     private CallbackManager callbackManager;
+    private Button scrollUp,scrollDown;
+    private ScrollView scrollView;
+    public static final int SCROLL_DELTA = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +48,25 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_fb);
-
+        loginGg = findViewById(R.id.login_gg);
+        scrollView = findViewById(R.id.scrollView);
+        //login google
+        loginGg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.login_gg:
+                        signIn();
+                        break;
+                    // ...
+                }
+            }
+        });
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        //login facebook
         callbackManager = CallbackManager.Factory.create();
         login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -51,6 +84,12 @@ public class LoginActivity extends AppCompatActivity {
                 //code
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
     }
 
     public void callSignUp(View view) {
@@ -76,13 +115,18 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent,options.toBundle());
         finish();
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
     }
-
     private Boolean validateUsername(){
         String val = username.getEditText().getText().toString();
         String noWhiteSpace ="\\A\\w{4,20}\\z";
@@ -119,6 +163,42 @@ public class LoginActivity extends AppCompatActivity {
     public void validateUser(View view) {
         if(!validateUsername()| !validatePassword()){
             return;
+        }
+    }
+    public void scrollUp(View view) {
+        scrollUp = findViewById(R.id.button_scrollUp);
+        int x = this.scrollView.getScrollX();
+        int y = this.scrollView.getScrollY();
+
+        if(y - SCROLL_DELTA >= 0) {
+            this.scrollView.scrollTo(x, y-SCROLL_DELTA);
+        }
+    }
+    public void scrollDown(View view) {
+        scrollDown = findViewById(R.id.button_scrollDown);
+        int maxAmount = scrollView.getMaxScrollAmount();
+
+        int x = this.scrollView.getScrollX();
+        int y = this.scrollView.getScrollY();
+
+        if(y + SCROLL_DELTA <= maxAmount) {
+            this.scrollView.scrollTo(x, y + SCROLL_DELTA);
+        }
+    }
+
+    private void signIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+
+            // Signed in successfully, show authenticated UI.
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
     }
 }
