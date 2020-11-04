@@ -76,6 +76,4 @@ public class NowSlide extends AppCompatActivity {
         Intent intent = new Intent(this, DetailMovieActivity.class);
         startActivity(intent);
     }
-
-
 }
