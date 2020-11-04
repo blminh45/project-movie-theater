@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);;
                 return true;
             case R.id.action_profile:
-                Intent intent4=new Intent(this,ProfileActivity.class);
+                Intent intent4=new Intent(this,InforActivity.class);
                 startActivity(intent4);
                 return true;
 
