@@ -8,7 +8,6 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -38,8 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     int RC_SIGN_IN = 0 ;
     private LoginButton login;
     private CallbackManager callbackManager;
-    private Button scrollUp,scrollDown;
-    private ScrollView scrollView;
     public static final int SCROLL_DELTA = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_fb);
         loginGg = findViewById(R.id.login_gg);
-        scrollView = findViewById(R.id.scrollView);
         //login google
         loginGg.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -165,27 +161,6 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
     }
-    public void scrollUp(View view) {
-        scrollUp = findViewById(R.id.button_scrollUp);
-        int x = this.scrollView.getScrollX();
-        int y = this.scrollView.getScrollY();
-
-        if(y - SCROLL_DELTA >= 0) {
-            this.scrollView.scrollTo(x, y-SCROLL_DELTA);
-        }
-    }
-    public void scrollDown(View view) {
-        scrollDown = findViewById(R.id.button_scrollDown);
-        int maxAmount = scrollView.getMaxScrollAmount();
-
-        int x = this.scrollView.getScrollX();
-        int y = this.scrollView.getScrollY();
-
-        if(y + SCROLL_DELTA <= maxAmount) {
-            this.scrollView.scrollTo(x, y + SCROLL_DELTA);
-        }
-    }
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);

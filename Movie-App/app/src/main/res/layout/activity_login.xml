@@ -125,34 +125,4 @@
             android:textSize="27dp"/>
     </LinearLayout>
     </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="139dp"
-        android:layout_weight="1">
-        <Button
-            android:id="@+id/button_scrollUp"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:background="#000"
-            android:fontFamily="@font/antic"
-            android:text="Kéo lên"
-            android:textColor="#FFF"
-            android:textSize="18dp"
-            android:onClick="scrollUp"/>
-
-        <Button
-            android:id="@+id/button_scrollDown"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="#000"
-            android:fontFamily="@font/antic"
-            android:text="Kéo xuống"
-            android:textColor="#FFF"
-            android:textSize="18dp"
-            android:onClick="scrollDown"/>
-    </RelativeLayout>
 </LinearLayout>
