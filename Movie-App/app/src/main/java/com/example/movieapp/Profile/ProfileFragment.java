@@ -70,13 +70,7 @@ public class ProfileFragment extends Fragment {
 
     public void Back()
     {
-        mBtn = (Button) mRootView.findViewById(R.id.btn_Back);
-        mBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),InforActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
     public void Spinner_City()
     {
