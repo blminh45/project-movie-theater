@@ -38,7 +38,4 @@ public class ListMovieApdater extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         return listTab[position];
     }
-
-
-
 }
