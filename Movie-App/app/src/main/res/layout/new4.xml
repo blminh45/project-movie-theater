@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +12,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="580dp"
         android:text="Phim : Táo Quậy"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +35,7 @@
         android:layout_marginStart="96dp"
         android:layout_marginTop="56dp"
         android:text="Thể loại : Hài hước"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oldView4" />
@@ -48,7 +47,7 @@
         android:layout_marginStart="140dp"
         android:layout_marginTop="96dp"
         android:text="Điểm 8/10"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oldView4" />

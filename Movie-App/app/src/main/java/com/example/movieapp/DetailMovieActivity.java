@@ -24,6 +24,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     }
 
 
+
     public void initView(){
         viewPagerLichChieu = (ViewPager)findViewById(R.id.viewPagerDetailMovie);
         viewPagerLichChieu.setAdapter(new DetailMovieApdater(getSupportFragmentManager()));
@@ -32,7 +33,11 @@ public class DetailMovieActivity extends AppCompatActivity {
     }
 
     public void trailer(View view) {
-        Intent intent=new Intent(this, TrailerActivity.class);
+        Intent intent = new Intent(this, TrailerActivity.class);
+        startActivity(intent);
+    }
+    public void DatVe(View view) {
+        Intent intent = new Intent(this, PayActivity.class);
         startActivity(intent);
     }
 }

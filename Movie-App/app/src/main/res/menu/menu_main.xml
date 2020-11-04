@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.test.MainActivity">
+    <item
+        android:id="@+id/action_login"
+        android:orderInCategory="102"
+        android:title="✪ Đăng nhập"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_signup"
+        android:orderInCategory="102"
+        android:title="✰ Đăng ký"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_list"
+        android:orderInCategory="102"
+        android:title="❉ Tất cả phim"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_profile"
+        android:orderInCategory="102"
+        android:title="❤ Thông tin cá nhân"
+        app:showAsAction="never" />
+
+</menu>
