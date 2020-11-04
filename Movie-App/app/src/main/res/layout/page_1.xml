@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F08080">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/text1"
@@ -13,7 +12,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="428dp"
         android:text="Phim : The JOKER"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +34,7 @@
         android:layout_marginStart="104dp"
         android:layout_marginTop="56dp"
         android:text="Thể loại : Hành động"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text1" />
@@ -47,7 +46,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="108dp"
         android:text="Điểm 10/10"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text1" />

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F08080">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/oldText3"
@@ -13,7 +12,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="580dp"
         android:text="Phim : Biệt đội anh hùng"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +34,7 @@
         android:layout_marginStart="104dp"
         android:layout_marginTop="40dp"
         android:text="Thể loại : Hành động"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oldView3" />
@@ -47,7 +46,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="80dp"
         android:text="Điểm 8.5/10"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/oldView3" />

@@ -72,11 +72,8 @@ public class NowSlide extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void Back(View view) {
-        finish();
-    }
-    public void DatVe(View view) {
-        Intent intent = new Intent(this, PayActivity.class);
+    public void ChiTietPhim(View view) {
+        Intent intent = new Intent(this, DetailMovieActivity.class);
         startActivity(intent);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DetailMovieActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -149,6 +149,7 @@
                         android:layout_marginTop="12dp"
                         android:background="#F44336"
                         android:text="Đặt vé"
+                        android:onClick="DatVe"
                         android:textColor="#FFFFFF"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.054"

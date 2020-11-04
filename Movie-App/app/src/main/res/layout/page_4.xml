@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F08080">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +12,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="424dp"
         android:text="Phim : Fast and Furios 8"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +33,7 @@
         android:layout_marginStart="112dp"
         android:layout_marginTop="16dp"
         android:text="Thể loại : Hành động"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -46,7 +45,7 @@
         android:layout_marginStart="148dp"
         android:layout_marginTop="100dp"
         android:text="Điểm 9/10"
-        android:textColor="@android:color/background_dark"
+        android:textColor="#E50914"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
