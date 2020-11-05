@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -17,7 +18,9 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -29,6 +32,8 @@ public class SignUpActivity extends AppCompatActivity {
     TextInputLayout regName,regUsername,regEmail,regPhone,regPassword;
     Button regBtn,regToLoginBtn,chooseBtn;
     ImageView mImageView;
+    ImageView image;
+    TextView logoText,sloganText;
     private static final int  IMAGE_PICK_CODE = 1000;
     private static final int  PERMISSION_CODE = 1001;
     @Override
@@ -168,5 +173,26 @@ public class SignUpActivity extends AppCompatActivity {
                 exception.printStackTrace();
             }
         }
+    }
+
+    public void callLogin(View view) {
+        Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
+        startActivity(intent);
+        image = findViewById(R.id.logo_image);
+        logoText = findViewById(R.id.slogan);
+        sloganText = findViewById(R.id.ex);
+        regToLoginBtn = findViewById(R.id.login);
+        regBtn = findViewById(R.id.signup);
+        Pair[] pairs = new Pair[7];
+        pairs[0] = new Pair<View,String>(image,"logo_image");
+        pairs[1] = new Pair<View,String>(logoText,"logo_text");
+        pairs[2] = new Pair<View,String>(sloganText,"ex_tran");
+        pairs[3] = new Pair<View,String>(regUsername,"username_tran");
+        pairs[4] = new Pair<View,String>(regPassword,"password_tran");
+        pairs[6] = new Pair<View,String>(regToLoginBtn,"button_tran");
+        pairs[5] = new Pair<View,String>(regBtn,"login_signup_tran");
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this,pairs);
+        startActivity(intent,options.toBundle());
+        finish();
     }
 }

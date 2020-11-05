@@ -10,11 +10,13 @@
     android:background="#fff">
 
     <ImageView
+        android:id="@+id/logo_image"
         android:layout_width="213dp"
         android:layout_height="182dp"
         android:src="@drawable/logo_1"
         android:transitionName="logo_image"/>
     <TextView
+        android:id="@+id/slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FIVE BOYS"
@@ -24,10 +26,11 @@
         android:transitionName="logo_text"
         android:layout_marginTop="-80dp"/>
     <TextView
+        android:id="@+id/ex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đăng ký tài khoản thành viên"
-        android:transitionName="ex_tran"
+        android:transitionName="ex"
         android:textSize="20sp"/>
     <ScrollView
         android:id="@+id/scrollView"
@@ -120,6 +123,7 @@
             android:layout_height="wrap_content"/>
     </LinearLayout></ScrollView>
     <Button
+        android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đăng Ký"
@@ -129,9 +133,11 @@
         android:transitionName="button_tran"
         android:onClick="registerUser"/>
     <Button
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bạn đã có tài khoản? Đăng nhập"
         android:background="#00000000"
-        android:transitionName="login_signup_tran"/>
+        android:transitionName="login_signup_tran"
+        android:onClick="callLogin"/>
 </LinearLayout>

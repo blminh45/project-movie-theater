@@ -1,2 +1,6 @@
+include ':facebooksdk'
+include ':facebook'
+include ':facebook-login'
+include ':mylibrary'
 include ':app'
 rootProject.name = "MovieApp"
