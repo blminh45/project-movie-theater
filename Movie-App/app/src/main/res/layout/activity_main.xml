@@ -51,16 +51,6 @@
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/btnNow" />
 
-   <ImageView
-       android:id="@+id/imageView2"
-       android:layout_width="235dp"
-       android:layout_height="177dp"
-       android:layout_marginEnd="88dp"
-       android:layout_marginBottom="570dp"
-       app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:srcCompat="@drawable/logo_1" />
-
    <TextView
        android:id="@+id/textView8"
        android:layout_width="wrap_content"
@@ -124,4 +114,13 @@
        app:layout_constraintStart_toEndOf="@+id/imageView10"
        app:layout_constraintTop_toTopOf="parent"
        app:srcCompat="@drawable/phim2" />
+
+   <ImageView
+       android:id="@+id/imageView12"
+       android:layout_width="267dp"
+       android:layout_height="191dp"
+       android:layout_marginStart="65dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:srcCompat="@drawable/logo_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
