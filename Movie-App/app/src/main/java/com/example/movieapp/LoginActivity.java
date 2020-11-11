@@ -180,4 +180,9 @@ public class LoginActivity extends AppCompatActivity {
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
     }
+
+    public void forgotPassword(View view) {
+        Intent intent = new Intent(this,ForgotPassword.class);
+        startActivity(intent);
+    }
 }
