@@ -8,10 +8,10 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Tên phim</th>
-                    <th scope="col">Đạo diễn</th>
                     <th scope="col">Thời lượng</th>
-                    <th scope="col">Quốc gia</th>
                     <th scope="col">Thể loại</th>
+                    <th scope="col">Sửa</th>
+                    <th scope="col">Xóa</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,10 +19,10 @@
                     <tr>
                         <th scope="row">{{ $i+1 }}</th>
                         <td>Film</td>
-                        <td>Otto</td>
                         <td>90p</td>
-                        <td>Mỹ</td>
                         <td>Hành động</td>
+                        <td><button class="btn btn-warning btn-lg">Sửa</button></td>
+                        <td><button class="btn btn-secondary btn-lg" style="background-color: #606060; color: #fff;">Xóa</button></td>
                     </tr>
                 @endfor
             </tbody>
