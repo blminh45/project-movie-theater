@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKhachHangsTable extends Migration
+class CreateLichChieusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKhachHangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('khach-hangs', function (Blueprint $table) {
+        Schema::create('lich_chieus', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateKhachHangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('khach-hangs');
+        Schema::dropIfExists('lich_chieus');
     }
 }
