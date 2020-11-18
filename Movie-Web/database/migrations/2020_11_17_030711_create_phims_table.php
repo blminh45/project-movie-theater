@@ -17,7 +17,7 @@ class CreatePhimsTable extends Migration
             $table->id();
             $table->string('ten_phim');
             $table->string('hinh_anh');
-            $table->int('id_the_loai');
+            $table->integer('id_the_loai');
             $table->float('thoi_luong');
             $table->date('khoi_chieu');
             $table->string('tom_tat');

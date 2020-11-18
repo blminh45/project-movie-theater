@@ -15,7 +15,7 @@ class CreateGhesTable extends Migration
     {
         Schema::create('ghes', function (Blueprint $table) {
             $table->id();
-            $table->int('so_ghe');
+            $table->integer('so_ghe');
             $table->timestamps();
         });
     }
