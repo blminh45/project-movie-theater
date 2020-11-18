@@ -15,6 +15,11 @@ class CreateNhanViensTable extends Migration
     {
         Schema::create('nhan_viens', function (Blueprint $table) {
             $table->id();
+            $table->string('ten');
+            $table->string('dia_chi');
+            $table->string('sdt');
+            $table->smallint('gioi_tinh');
+            $table->string('email');
             $table->timestamps();
         });
     }

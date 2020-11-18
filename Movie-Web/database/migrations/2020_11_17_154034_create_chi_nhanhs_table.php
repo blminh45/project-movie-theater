@@ -15,6 +15,8 @@ class CreateChiNhanhsTable extends Migration
     {
         Schema::create('chi_nhanhs', function (Blueprint $table) {
             $table->id();
+            $table->string('ten_chi_nhanh');
+            $table->string('dia_chi');
             $table->timestamps();
         });
     }
