@@ -15,6 +15,8 @@ class CreateSuatChieusTable extends Migration
     {
         Schema::create('suat_chieus', function (Blueprint $table) {
             $table->id();
+            $table->date('ngay_chieu');
+            $table->time('gio_chieu');
             $table->timestamps();
         });
     }
