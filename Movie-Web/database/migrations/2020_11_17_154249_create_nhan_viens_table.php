@@ -18,7 +18,7 @@ class CreateNhanViensTable extends Migration
             $table->string('ten');
             $table->string('dia_chi');
             $table->string('sdt');
-            $table->smallint('gioi_tinh');
+            $table->integer('gioi_tinh');
             $table->string('email');
             $table->timestamps();
         });
