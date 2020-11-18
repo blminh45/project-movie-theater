@@ -33,6 +33,7 @@ p{
 ul,label{
 	margin:0;
 	padding:0;
+    margin-right: 10px;
 }
 body a:hover{
 	text-decoration:none;

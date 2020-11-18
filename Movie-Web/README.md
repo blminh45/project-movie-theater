@@ -37,6 +37,9 @@ open cmder from laragon
 5. npm install
 6. npm run dev
 7. cp .env.example .env
-8. php artisan key:generate
+8. php artisan db:create
+9. php artisan key:generate
+10. php artisan migrate
+11. php artisan db:seed
 
 - --
