@@ -21,33 +21,20 @@ Route::get('/', function () {
 //     return view('login');
 // })->name('dang-nhap');
 
-Auth::routes();
+//Auth::routes();
 
 Route::group(['prefix'=>'phim'], function () {
-    Route::get('danh-sach-phim', function () {
-        return view('pages.danh-sach-phim');
-    })->name('danh-sach-phim');
+    Route::get('danh-sach-phim', 'HomeController@danh_sach_phim')->name('danh-sach-phim');
 
-    Route::get('them-phim', function () {
-        return view('pages.them-phim');
-    })->name('them-phim');
+    Route::get('them-phim', 'HomeController@them_phim')->name('them-phim');
 
-    Route::get('cap-nhat-phim', function () {
-        return view('pages.cap-nhat-phim');
-    })->name('cap-nhat-phim');
+    Route::get('cap-nhat-phim', 'HomeController@cap_nhat_phim')->name('cap-nhat-phim');
 });
 
 Route::group(['prefix'=>'rap-phim'], function () {
-    Route::get('danh-sach-rap', function () {
-        return view('pages.danh-sach-rap');
-    })->name('danh-sach-rap');
+    Route::get('danh-sach-rap', 'HomeController@danh_sach_rap')->name('danh-sach-rap');
 });
 
 Route::group(['prefix'=>'thanh-vien'], function () {
-    Route::get('danh-sach-thanh-vien', function () {
-        return view('pages.danh-sach-thanh-vien');
-    })->name('danh-sach-thanh-vien');
+    Route::get('danh-sach-thanh-vien', 'HomeController@danh_sach_thanh_vien')->name('danh-sach-thanh-vien');
 });
-
-
-// Route::get('/home', 'HomeController@index')->name('home');
