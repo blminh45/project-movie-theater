@@ -37339,8 +37339,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Laragon\laragon\www\Movie-Web\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Laragon\laragon\www\Movie-Web\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\project-movie-theater\Movie-Web\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\project-movie-theater\Movie-Web\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

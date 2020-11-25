@@ -38,7 +38,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     }
 
     public void trailer(View view) {
-        Intent intent = new Intent(this, TrailerActivity.class);
+        Intent intent = new Intent(this, WatchTrailerActivity.class);
         startActivity(intent);
     }
     public void DatVe(View view) {
@@ -76,5 +76,10 @@ public class DetailMovieActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void ThanhToan(View view) {
+        Intent intent = new Intent(this, PayActivity.class);
+        startActivity(intent);
     }
 }

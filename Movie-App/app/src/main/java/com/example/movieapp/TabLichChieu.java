@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,6 +44,13 @@ public class TabLichChieu extends Fragment {
                 getActivity(), android.R.layout.simple_list_item_1 ,DanhSachGio
         );
         GioChieu.setAdapter(adapter);
+        //Thêm sự kiên click
+        GioChieu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText( getActivity() , "" + DanhSachGio[position], Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     public void showThanhPho(){
         listThanhPho = new ArrayList<>();
