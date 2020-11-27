@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 // Route::get('dang-nhap', function () {
-//     return view('login');
+//         return view('pages.dang-nhap');
 // })->name('dang-nhap');
 
 Auth::routes();
@@ -51,3 +51,7 @@ Route::group(['prefix'=>'thanh-vien'], function () {
 
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
