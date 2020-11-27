@@ -6,17 +6,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
-        android:usesCleartextTraffic="true"
-
-
         android:allowBackup="true"
         android:label="FiveBoys "
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ChooseChairActivity"></activity>
         <activity
             android:name=".WatchTrailerActivity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity android:name=".TrailerActivity" />
         <activity android:name=".ListMovieActivity" />
         <activity android:name=".WillSlide" />

@@ -1,13 +1,13 @@
 package com.example.movieapp;
 
-public class PhimDangChieu {
+public class Phim {
     private int Poster;
     private String Name;
     private String TheLoai;
-    private String Diem;
+    private float Diem;
     private int Tuoi;
 
-    public PhimDangChieu(int poster, String name, String theLoai, String diem, int tuoi) {
+    public Phim(int poster, String name, String theLoai, float diem, int tuoi) {
         Poster = poster;
         Name = name;
         TheLoai = theLoai;
@@ -39,11 +39,11 @@ public class PhimDangChieu {
         TheLoai = theLoai;
     }
 
-    public String getDiem() {
+    public float getDiem() {
         return Diem;
     }
 
-    public void setDiem(String diem) {
+    public void setDiem(float diem) {
         Diem = diem;
     }
 

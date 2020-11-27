@@ -11,12 +11,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
 public class DetailMovieActivity extends AppCompatActivity {
     private ViewPager viewPagerLichChieu;
-
+    private TextView movieName;
+    private TextView movieTuoi;
+    private TextView movieDiem;
+    private ImageView anhDaiDien;
 
 
     @Override
@@ -25,7 +31,28 @@ public class DetailMovieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_movie);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //Nhận dữ liệu từ phim được click
+        setDetail();
         initView();
+    }
+
+    private void setDetail(){
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("MovieName");
+        String poster = intent.getStringExtra("MoviePoster");
+        String theloai = intent.getStringExtra("MovieTheLoai");
+        String diem = intent.getStringExtra("MovieDiem");
+        String tuoi = intent.getStringExtra("MovieTuoi");
+        Toast.makeText(this, diem, Toast.LENGTH_SHORT).show();
+        movieName =(TextView)findViewById(R.id.movieName);
+        movieTuoi =(TextView)findViewById(R.id.movieTuoi);
+        movieDiem=(TextView)findViewById(R.id.movieDiem);
+        anhDaiDien=(ImageView)findViewById(R.id.anhDaiDien);
+        movieName.setText(name);
+        movieDiem.setText(diem);
+        movieTuoi.setText(tuoi+"+");
+        int number = Integer.parseInt(poster);
+        anhDaiDien.setImageResource(number);
     }
 
 
