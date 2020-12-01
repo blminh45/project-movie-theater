@@ -22,27 +22,27 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
 
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="360dp"
-            android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:queryHint="Phim"></SearchView>
+<!--        <SearchView-->
+<!--            android:id="@+id/search"-->
+<!--            android:layout_width="360dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:iconifiedByDefault="false"-->
+<!--            android:queryHint="Phim"></SearchView>-->
 
-        <ImageButton
-            android:id="@+id/filter"
-            android:layout_width="52dp"
-            android:layout_height="match_parent"
-            android:background="#FDFDFD"
-            android:onClick="filter"
-            android:src="@drawable/filter" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/filter"-->
+<!--            android:layout_width="52dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#FDFDFD"-->
+<!--            android:onClick="filter"-->
+<!--            android:src="@drawable/filter" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabListMovie"
