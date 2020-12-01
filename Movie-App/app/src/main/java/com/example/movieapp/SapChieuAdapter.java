@@ -1,6 +1,7 @@
 package com.example.movieapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,7 @@ public class SapChieuAdapter extends RecyclerView.Adapter<SapChieuAdapter.ViewHo
         return phimsapchieu.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView poster;
         TextView name;
         TextView theloai;
@@ -57,6 +58,28 @@ public class SapChieuAdapter extends RecyclerView.Adapter<SapChieuAdapter.ViewHo
             theloai = (TextView)itemView.findViewById(R.id.TheLoai_sap_chieu);
             tuoi = (TextView)itemView.findViewById(R.id.Tuoi_sap_chieu);
             diem = (TextView)itemView.findViewById(R.id.Diem_sap_chieu);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getLayoutPosition();
+            String name = phimsapchieu.get(position).getName();
+            int poster = phimsapchieu.get(position).getPoster();
+            String theloai = phimsapchieu.get(position).getTheLoai();
+            float diem = phimsapchieu.get(position).getDiem();
+            int tuoi = phimsapchieu.get(position).getTuoi();
+
+//            Toast.makeText(context, "Phim:"+ name.toString() +"-"+Integer.toString(poster)+"-"+theloai.toString()+"-"+Float.toString(diem)+"-"+Integer.toString(tuoi),
+//                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context, DetailMovieActivity.class);
+            intent.putExtra("MovieName", name);
+            intent.putExtra("MoviePoster", Integer.toString(poster));
+            intent.putExtra("MovieTheLoai", theloai);
+            intent.putExtra("MovieDiem", Float.toString(diem));
+            intent.putExtra("MovieTuoi", Integer.toString(tuoi));
+
+            context.startActivity(intent);
         }
     }
 }
