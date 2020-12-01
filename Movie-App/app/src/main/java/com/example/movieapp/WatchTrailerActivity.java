@@ -27,8 +27,8 @@ public class WatchTrailerActivity extends YouTubeBaseActivity implements YouTube
     String API_KEY="AIzaSyCgGZKSdykJEkbIUrTHqCTCVFjK6DFknRM";
     String Trailer_ID ="Q6iK6DjV_iE";
     private PlayerView playerView;
-    private SimpleExoPlayer simpleExoPlayer;
-    public static final String TrailerURL ="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4";
+//    private SimpleExoPlayer simpleExoPlayer;
+//    public static final String TrailerURL ="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4";
 
 
     private YouTubePlayerView youTubePlayerView;
