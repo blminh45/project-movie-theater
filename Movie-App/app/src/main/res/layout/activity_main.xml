@@ -2,48 +2,31 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:id="@+id/TrangChu"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#221F1F"
+    android:background="@color/ic_launcher_background"
     tools:context=".MainActivity">
-
-
-   <com.google.android.material.appbar.AppBarLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:background="@color/cardview_dark_background"
-       android:theme="@style/AppTheme.AppBarOverlay"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent">
-
-      <androidx.appcompat.widget.Toolbar
-          android:id="@+id/toolbar"
-          android:layout_width="match_parent"
-          android:layout_height="?attr/actionBarSize"
-          android:background="#E50914"
-          app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-   </com.google.android.material.appbar.AppBarLayout>
 
    <Button
        android:id="@+id/btnNow"
        android:layout_width="153dp"
        android:layout_height="53dp"
-       android:layout_marginStart="270dp"
-       android:layout_marginTop="314dp"
+       android:layout_marginTop="320dp"
        android:background="?attr/selectableItemBackground"
        android:onClick="NowSlide"
        android:text="Xem thêm    ➜"
        android:textColor="#E50914"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       tools:ignore="MissingConstraints" />
 
    <Button
        android:id="@+id/button"
        android:layout_width="153dp"
        android:layout_height="53dp"
-       android:layout_marginStart="270dp"
-       android:layout_marginTop="144dp"
+       android:layout_marginStart="264dp"
+       android:layout_marginTop="152dp"
        android:background="?attr/selectableItemBackground"
        android:onClick="WillSlide"
        android:text="Xem thêm    ➜"
@@ -123,4 +106,43 @@
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
        app:srcCompat="@drawable/logo_1" />
+
+   <androidx.appcompat.widget.Toolbar
+       android:id="@+id/toolbar2"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@android:color/holo_red_dark"
+       android:minHeight="?attr/actionBarSize"
+       android:theme="?attr/actionBarTheme"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <ImageButton
+       android:id="@+id/imageButton"
+       android:layout_width="70dp"
+       android:layout_height="56dp"
+       android:background="@android:drawable/ic_menu_add"
+       android:onClick="OnMenu"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:srcCompat="@android:drawable/ic_dialog_info" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <!--   <com.google.android.material.appbar.AppBarLayout-->
+   <!--       android:layout_width="match_parent"-->
+   <!--       android:layout_height="wrap_content"-->
+   <!--       android:background="@color/cardview_dark_background"-->
+   <!--       android:theme="@style/AppTheme.AppBarOverlay"-->
+   <!--       app:layout_constraintStart_toStartOf="parent"-->
+   <!--       app:layout_constraintTop_toTopOf="parent">-->
+
+   <!--      <androidx.appcompat.widget.Toolbar-->
+   <!--          android:id="@+id/toolbar"-->
+   <!--          android:layout_width="match_parent"-->
+   <!--          android:layout_height="?attr/actionBarSize"-->
+   <!--          android:background="#E50914"-->
+   <!--          app:popupTheme="@style/AppTheme.PopupOverlay" />-->
+
+   <!--   </com.google.android.material.appbar.AppBarLayout>-->
+

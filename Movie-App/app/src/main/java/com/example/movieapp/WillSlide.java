@@ -76,5 +76,6 @@ public class WillSlide extends AppCompatActivity {
     public void ChiTietPhim(View view) {
         Intent intent = new Intent(this, DetailMovieActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
 }

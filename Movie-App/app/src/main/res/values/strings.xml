@@ -3,5 +3,8 @@
     <string name="tab_text_1">Trang chủ</string>
     <string name="tab_text_2">Sắp chiếu</string>
     <string name="tab_text_3">Đang chiếu</string>
-    <string name="facebook_app_id">712769945999453</string> <string name="fb_login_protocol_scheme">fb712769945999453</string>
+    <string name="Open_Drawable">Open Drawable</string>
+    <string name="Close_Drawable">Close Drawable</string>
+    <string name="facebook_app_id">712769945999453</string>
+    <string name="fb_login_protocol_scheme">fb712769945999453</string>
 </resources>
