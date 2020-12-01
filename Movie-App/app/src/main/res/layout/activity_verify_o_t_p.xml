@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:text="Nhập mã xác minh đã gửi vào +87911129665"
+            android:text="Nhập mã xác minh đã gửi vào +84911129665"
             android:textColor="#000"
             android:textAllCaps="true"
             android:textAlignment="center"
