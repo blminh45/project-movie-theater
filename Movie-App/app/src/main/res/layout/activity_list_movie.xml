@@ -6,43 +6,53 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ListMovieActivity">
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#E50914"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="360dp"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:queryHint="Phim"></SearchView>
+            android:background="@android:color/holo_red_dark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/filter"
-            android:layout_width="52dp"
-            android:layout_height="match_parent"
-            android:background="#FDFDFD"
-            android:onClick="filter"
-            android:src="@drawable/filter" />
+            android:id="@+id/imageButton"
+            android:layout_width="70dp"
+            android:layout_height="56dp"
+            android:background="@android:drawable/ic_menu_add"
+            android:onClick="OnMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_dialog_info" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <SearchView-->
+<!--            android:id="@+id/search"-->
+<!--            android:layout_width="360dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:iconifiedByDefault="false"-->
+<!--            android:queryHint="Phim"></SearchView>-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/filter"-->
+<!--            android:layout_width="52dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#FDFDFD"-->
+<!--            android:onClick="filter"-->
+<!--            android:src="@drawable/filter" />-->
+
+<!--    </LinearLayout>-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabListMovie"

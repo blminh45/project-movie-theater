@@ -326,7 +326,7 @@
                 android:id="@+id/GioChieu"
                 android:layout_width="match_parent"
                 android:layout_height="203dp"
-                android:gravity="end"
+                android:gravity="center_horizontal"
                 android:numColumns="4" />
 
             <TextView

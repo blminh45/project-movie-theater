@@ -38,8 +38,6 @@ public class NowSlide extends AppCompatActivity {
         pagerAdapter = new SlidePagerAdapter(getSupportFragmentManager(),list);
         pager.setAdapter(pagerAdapter);
         this.pager.setPageTransformer(true,new ZoomOutPageTransformer());
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -75,5 +73,12 @@ public class NowSlide extends AppCompatActivity {
     public void ChiTietPhim(View view) {
         Intent intent = new Intent(this, DetailMovieActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
+
+    public void OnMenu(View view) {
+        Intent intent=new Intent(this,ActivityMenu.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
 }

@@ -2,7 +2,9 @@ package com.example.movieapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class PayActivity extends AppCompatActivity {
 
@@ -10,5 +12,11 @@ public class PayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay);
+    }
+
+    public void OnMenu(View view) {
+        Intent intent=new Intent(this,ActivityMenu.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
 }
