@@ -1,10 +1,15 @@
 package com.example.movieapp;
-import androidx.appcompat.app.AppCompatActivity;
-
-
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -12,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
+        }
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.

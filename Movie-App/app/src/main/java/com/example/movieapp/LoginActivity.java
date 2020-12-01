@@ -97,7 +97,6 @@ public class LoginActivity extends AppCompatActivity {
         sloganText = findViewById(R.id.ex);
         image = findViewById(R.id.logo_image);
         logoText = findViewById(R.id.slogan);
-        sloganText = findViewById(R.id.ex);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.login);
@@ -173,12 +172,16 @@ public class LoginActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
             // Signed in successfully, show authenticated UI.
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    public void forgotPassword(View view) {
+        Intent intent = new Intent(this,ForgotPassword.class);
+        startActivity(intent);
     }
 }
