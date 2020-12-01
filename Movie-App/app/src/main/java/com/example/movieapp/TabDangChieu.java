@@ -61,7 +61,7 @@ public class TabDangChieu extends Fragment {
     }
 
     public void showListSearch(){
-        field = (SearchView)getActivity().findViewById(R.id.search);
+        field = (SearchView)dangChieuRootView.findViewById(R.id.searchDangChieu);
         field.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -72,7 +72,7 @@ public class TabDangChieu extends Fragment {
             public boolean onQueryTextChange(String getText) {
                 if(getText.isEmpty()) {
                     recyclerView =(RecyclerView)getActivity().findViewById(R.id.recycler_dang_chieu);
-                   recyclerView.setHasFixedSize(true);
+                    recyclerView.setHasFixedSize(true);
 
                     gridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
                     recyclerView.setLayoutManager(gridLayoutManager);

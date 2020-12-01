@@ -46,10 +46,10 @@ public class TabSapChieu extends Fragment {
 //        recyclerView.setLayoutManager(linearLayoutManager);
         SapChieuAdapter sapChieuAdapter = new SapChieuAdapter(listSapChieu, getContext());
         recyclerViewSapChieu.setAdapter(sapChieuAdapter);
-//        showListSearch();
+        showListSearch();
     }
     public void showListSearch(){
-        field = (SearchView)getActivity().findViewById(R.id.search);
+        field = (SearchView)sapChieuRootView.findViewById(R.id.searchSapChieu);
         field.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
