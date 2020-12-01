@@ -29,8 +29,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
         //Nhận dữ liệu từ phim được click
         setDetail();
         initView();
@@ -108,5 +107,11 @@ public class DetailMovieActivity extends AppCompatActivity {
     public void ThanhToan(View view) {
         Intent intent = new Intent(this, PayActivity.class);
         startActivity(intent);
+    }
+
+    public void OnMenu(View view) {
+        Intent intent=new Intent(this,ActivityMenu.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
 }
