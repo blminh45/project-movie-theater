@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "89191285436",
+    "firebase_url": "https://signup-aac6d.firebaseio.com",
+    "project_id": "signup-aac6d",
+    "storage_bucket": "signup-aac6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89191285436:android:bb553081547d85b4c946b9",
+        "android_client_info": {
+          "package_name": "com.example.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89191285436-aare78e8rh2prl0frg505a387m514qh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzg0MsvKNQaxhLA7NN7xBrCebJySWW-eI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89191285436-aare78e8rh2prl0frg505a387m514qh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

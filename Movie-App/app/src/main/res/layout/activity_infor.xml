@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InforActivity">
+    tools:context=".InforActivity"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="70dp"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:drawable/ic_menu_add"
+            android:onClick="OnMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_dialog_info" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/grad"
-        android:paddingBottom="20dp">
+        >
 
         <RelativeLayout
             android:id="@+id/imgUser"
@@ -47,8 +75,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginRight="15dp"
             android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
             android:src="@drawable/ic_arrow_back" />
@@ -58,7 +86,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rellay1">
+        android:layout_below="@+id/rellay1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -124,7 +155,6 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -165,10 +195,11 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_arrow_right"
                     android:gravity="start|center"
-                    android:text="Thong tin va lich su giao dich"
-                    android:onClick="Click"/>
+                    android:onClick="Click"
+                    android:text="Thong tin va lich su giao dich" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -179,11 +210,11 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_arrow_right"
                     android:gravity="start|center"
-                    android:text="Dang xuat"
-                    />
+                    android:text="Dang xuat" />
 
             </LinearLayout>
         </LinearLayout>
 
     </RelativeLayout>
-</RelativeLayout>
+
+</LinearLayout>

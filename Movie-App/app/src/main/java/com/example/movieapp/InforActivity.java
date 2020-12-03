@@ -18,4 +18,10 @@ public class InforActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ProfileActivity.class);
         startActivity(intent);
     }
+
+    public void OnMenu(View view) {
+        Intent intent=new Intent(this,ActivityMenu.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
 }
