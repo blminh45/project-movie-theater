@@ -17,6 +17,7 @@ class CreateChiNhanhsTable extends Migration
             $table->id();
             $table->string('ten_chi_nhanh');
             $table->string('dia_chi');
+            $table->tinyInteger('trang_thai');
             $table->timestamps();
         });
     }

@@ -15,12 +15,9 @@ class CreateVesTable extends Migration
     {
         Schema::create('ves', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_lich_chieu');
-            $table->integer('id_chi_nhanh');
-            $table->integer('id_ghe');
-            $table->decimal('gia');
-            $table->integer('id_nhan_vien');
+            $table->integer('id_suat_chieu');
             $table->integer('id_khach_hang');
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

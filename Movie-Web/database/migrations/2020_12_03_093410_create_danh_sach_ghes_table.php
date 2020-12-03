@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGiasTable extends Migration
+class CreateDanhSachGhesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('gias', function (Blueprint $table) {
+        Schema::create('danh_sach_ghes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateGiasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gias');
+        Schema::dropIfExists('danh_sach_ghes');
     }
 }
