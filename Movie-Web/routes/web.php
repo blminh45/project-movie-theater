@@ -17,11 +17,12 @@ Route::get('/', function () {
     return view('pages.trang-chu');
 });
 
-// Route::get('dang-nhap', function () {
-//     return view('login');
-// })->name('dang-nhap');
+Route::get('dang-nhap', function () {
 
-//Auth::routes();
+    return view('login');
+})->name('dang-nhap');
+
+Auth::routes();
 
 Route::group(['prefix'=>'phim'], function () {
     Route::get('danh-sach-phim', 'HomeController@danh_sach_phim')->name('danh-sach-phim');

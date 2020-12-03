@@ -18,10 +18,11 @@ class CreatePhimsTable extends Migration
             $table->string('ten_phim');
             $table->string('hinh_anh')->nullable();
             $table->integer('id_the_loai')->unsigned();
-            //$table->foreign('id_the_loai')->references('id')->on('the_loais');
             $table->float('thoi_luong');
             $table->date('khoi_chieu')->nullable();
             $table->string('tom_tat')->nullable();
+            $table->string('trailer')->nullable();
+            $table->boolean('trang_thai');
             $table->timestamps();
         });
     }

@@ -15,8 +15,11 @@ class CreateSuatChieusTable extends Migration
     {
         Schema::create('suat_chieus', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_rap');
+            $table->integer('id_phim');
             $table->date('ngay_chieu');
             $table->time('gio_chieu');
+            $table->tinyInteger('trang_thai');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTaiKhoansTable extends Migration
+class CreateDanhSachChonGhesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateTaiKhoansTable extends Migration
      */
     public function up()
     {
-        Schema::create('tai_khoans', function (Blueprint $table) {
+        Schema::create('danh_sach_chon_ghes', function (Blueprint $table) {
             $table->id();
-            $table->string('user_name');
-            $table->string('password');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateTaiKhoansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tai_khoans');
+        Schema::dropIfExists('danh_sach_chon_ghes');
     }
 }
