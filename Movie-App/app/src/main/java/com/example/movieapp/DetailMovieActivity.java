@@ -42,7 +42,7 @@ public class DetailMovieActivity extends AppCompatActivity {
         String theloai = intent.getStringExtra("MovieTheLoai");
         String diem = intent.getStringExtra("MovieDiem");
         String tuoi = intent.getStringExtra("MovieTuoi");
-        Toast.makeText(this, diem, Toast.LENGTH_SHORT).show();
+        int number = Integer.parseInt(poster);
         movieName =(TextView)findViewById(R.id.movieName);
         movieTuoi =(TextView)findViewById(R.id.movieTuoi);
         movieDiem=(TextView)findViewById(R.id.movieDiem);
@@ -50,7 +50,6 @@ public class DetailMovieActivity extends AppCompatActivity {
         movieName.setText(name);
         movieDiem.setText(diem);
         movieTuoi.setText(tuoi+"+");
-        int number = Integer.parseInt(poster);
         anhDaiDien.setImageResource(number);
     }
 
@@ -105,7 +104,24 @@ public class DetailMovieActivity extends AppCompatActivity {
     }
 
     public void ThanhToan(View view) {
+        TextView txtName = (TextView)findViewById(R.id.movieName) ;
+        ImageView anhDaiDien=(ImageView)findViewById(R.id.anhDaiDien);
+        TextView txtTime = (TextView)findViewById(R.id.actived_time) ;
+        TextView txtNgay = (TextView)findViewById(R.id.movieDate);
+        TextView txtGhe = (TextView)findViewById(R.id.actived_chair);
+        String rap = "Tan Binh";
+        String iTime = txtTime.getText().toString();
+        String iGhe = txtGhe.getText().toString();
+        String iNgay = txtNgay.getText().toString();
+        String name = txtName.getText().toString();
+
         Intent intent = new Intent(this, PayActivity.class);
+        intent.putExtra("MovieName", name);
+//        intent.putExtra("MoviePoster", Integer.toString(poster));
+        intent.putExtra("MovieRap", rap);
+        intent.putExtra("MovieTime", iTime);
+        intent.putExtra("MovieGhe", iGhe);
+        intent.putExtra("MovieNgay", iNgay);
         startActivity(intent);
     }
 
@@ -113,5 +129,32 @@ public class DetailMovieActivity extends AppCompatActivity {
         Intent intent=new Intent(this,ActivityMenu.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
+
+
+    //Truyen Ghe
+    public static final int TEXT_REQUEST = 1;
+
+    public void chair(View view) {
+        Intent intent = new Intent(this, ChooseChairActivity.class);
+        startActivityForResult(intent, TEXT_REQUEST);
+    }
+    @Override
+    public void onActivityResult(int requestCode,
+                                 int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        TextView txtGhe = (TextView)findViewById(R.id.actived_chair);
+
+        if (requestCode == TEXT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+
+                String reply =
+                        data.getStringExtra(ChooseChairActivity.EXTRA_REPLY);
+                txtGhe.setText(" "+reply+" ");
+            }
+        }
+
     }
 }
