@@ -2,42 +2,73 @@
 @section('noi-dung')
 
 <section class="wrapper">
-    <form>
-        <div class="form-group">
-            <label for="tenPhim">Tên phim</label>
-            <input type="text" class="form-control" id="tenPhim">
-        </div>
-        <div class="form-group">
-            <label for="doTuoi">Độ tuổi</label>
-            <select class="form-control" id="doTuoi">
-                <option>12</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="theLoai">Thể loại</label>
-            <div class="form-control" id="theLoai">
-                <input id="hanhdong" type="checkbox" name="hanhdong" value="0">
-                <label for="hanhdong" class="mr-4">hành động</label>
-                <input id="tinhcam" type="checkbox" name="tinhcam" value="1">
-                <label for="tinhcam">tình cảm</label>
-                <input id="tamly" type="checkbox" name="tamly" value="2">
-                <label for="tamly">tâm lý</label>
-                <input id="haihuoc" type="checkbox" name="haihuoc" value="3">
-                <label for="haihuoc">hài hước</label>
-                <input id="khoahoc" type="checkbox" name="khoahoc" value="4">
-                <label for="khoahoc">khoa học</label>
-                <input id="vothuat" type="checkbox" name="vothuat" value="5">
-                <label for="vothuat">võ thuật</label>
+    <div class="container">
+        <h2 class="title-h2 text-center add-movie">THÊM PHIM MỚI</h2>
+        <div class="fb-w-40 d-in-bl f-left ">
+            <form>
+                <div class="form-group">
+                    <label for="txtname">Tên phim</label>
+                    <input type="text" class="form-control" id="txtname" placeholder="Nhập tên phim">
+                    <small id="namemovie" class="form-text text-danger"> Vui lòng nhập tên phim!</small>
+                  </div>
+            </form>
+            <div class="form-group">
+                <label for="select-theloai">Thể loại</label>
+                <select class="form-control" id="select-theloai">
+                  <option>Hành động</option>
+                  <option>Hài</option>
+                  <option>Tình cảm</option>
+                  <option>Tâm lí</option>
+                  <option>Viễn tưởng</option>
+                </select>
             </div>
+           
+            <div class="form-group">
+                <label for="noidung">Tóm tắt nội dung</label>
+                <textarea class="form-control" id="noidung" rows="8"></textarea>
+                <small id="noidung" class="form-text text-danger"> Vui lòng nhập nội dung phim!</small>
+              </div>
+            </form>
+            <form>
+                <div class="form-group">
+                  <label for="poster">Tải ảnh lên</label>
+                  <input type="file" class="form-control-file" id="poster">
+                </div>
+              </form>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="fb-w-40 d-in-bl f-right">
+            <form>
+                <div class="form-group">
+                    <label for="txtthoiluong">Thời lượng</label>
+                    <input type="text" class="form-control" id="txtname" placeholder="Thời lượng">
+                    <small id="thoiluong" class="form-text text-danger"> Vui lòng nhập thời lượng!</small>
+                  </div>
+            </form>
+            <div class="form-group">
+                <label for="select-tuoi">Độ tuổi</label>
+                <select class="form-control" id="select-tuoi">
+                  <option>18+</option>
+                  <option>14+</option>
+                  <option>16+</option>
+                  <option>10+</option>
+                </select>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="txtkhoichieu">Khởi chiếu</label>
+                    <input type="date" class="form-control" id="txtkhoichieu" placeholder="Thời lượng">
+                    <small id="khoichieu" class="form-text text-danger">Ngày không hợp lệ!</small>
+                  </div>
+            </form>
+            <form>
+                <div class="form-group">
+                    <label for="txttrailer">Trailer</label>
+                    <input type="text" class="form-control" id="txttrailer" placeholder="Thời lượng">
+                    <small id="trailer" class="form-text text-danger">Vui lòng thêm trailer!</small>
+                  </div>
+            </form>
         </div>
-    </form>
+    </div>
 </section>
 
 @endsection

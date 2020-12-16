@@ -3145,3 +3145,78 @@ div#graph1, div#graph4, div#graph5, div#graph6, div#graph7, div#graph8, div#grap
     padding: 0;
 }
 }
+
+
+
+
+/* css thêm vào */
+
+.search-tv{
+    padding: 1em;
+    padding-left: 0;
+}
+.title-h2{
+    color: tomato;
+}
+.table-all th , .table-all td{
+    color: black !important;
+    background: white;
+}
+.table-all-dark th{
+    background:  black;
+    color: white !important;
+}
+.table-all{
+    display: block;
+    empty-cells: show;
+}
+.table-all thead{
+    position:relative;
+    display: block;
+    width:100%;
+}
+.table-all tbody{
+    display: block; 
+    position:relative;
+    width:100%;
+    height: 500px !important;
+    overflow-y:scroll;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+.table-all tr{
+    width: 100%;
+    display:flex;
+}
+  .table-all td,.table-all th{
+    flex-basis:100%;
+    flex-grow:2;
+    display: block;
+    text-align:left;
+}
+
+
+/* Thêm phim */
+
+.fb-w-40{
+    width: 45% !important;
+}
+.d-in-bl{
+    display: inline-block;
+}
+.f-left{
+  float: left;
+}
+.f-right{
+    float: right;
+}
+.add-movie{
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.poster{
+    width: 10% !important; 
+}
+.poster img{
+    width: 100% !important;
+    display: inline-block;
+}
