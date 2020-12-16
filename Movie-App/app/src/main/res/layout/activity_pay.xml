@@ -45,7 +45,7 @@
             app:srcCompat="@drawable/ava_2" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/movieDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -67,7 +67,7 @@
             android:textColor="#CCCCCC"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView" />
+            app:layout_constraintTop_toBottomOf="@id/movieDate" />
 
         <TextView
             android:id="@+id/textViewSuatChieu"
