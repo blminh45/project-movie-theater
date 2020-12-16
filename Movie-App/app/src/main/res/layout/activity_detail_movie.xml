@@ -13,10 +13,10 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar2"
+            android:id="@+id/tb_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_red_dark"
+            android:background="#FF1100"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,13 +24,13 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="70dp"
-            android:layout_height="56dp"
-            android:background="@android:drawable/ic_menu_add"
+            android:layout_width="51dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/btnmenu"
             android:onClick="OnMenu"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_dialog_info" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:layout_width="wrap_content"

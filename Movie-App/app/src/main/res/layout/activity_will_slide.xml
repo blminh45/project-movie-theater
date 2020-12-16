@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#221F1F"
+    android:background="@drawable/background_main"
     tools:context=".WillSlide">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/tb_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_red_dark"
+        android:background="#FF1100"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,20 +20,20 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="70dp"
-        android:layout_height="56dp"
-        android:background="@android:drawable/ic_menu_add"
+        android:layout_width="51dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/btnmenu"
         android:onClick="OnMenu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnDatVe"
         android:layout_width="151dp"
         android:layout_height="49dp"
         android:background="#E50914"
-        android:onClick="ChiTietPhim"
+        android:onClick="DanhSachPhim"
         android:text="Chi tiết    ➜"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +55,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="58dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

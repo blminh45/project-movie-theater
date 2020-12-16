@@ -1,5 +1,6 @@
 package com.example.movieapp;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 
 import android.content.Intent;
@@ -8,10 +9,12 @@ import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
 //    @Override
@@ -66,4 +69,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void ToList(View view) {
+        Intent intent=new Intent(this,ListMovieActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
+
+    public void ToUser(View view) {
+        Intent intent=new Intent(this,InforActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
 }
