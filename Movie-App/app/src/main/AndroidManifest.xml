@@ -10,6 +10,11 @@
         android:label="FiveBoys "
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".VerifyOTP"></activity>
+        <activity android:name=".SuccessMessage" />
+        <activity android:name=".SetNewPassword" />
+        <activity android:name=".MakeSelection" />
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".ActivityMenu"></activity>
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">

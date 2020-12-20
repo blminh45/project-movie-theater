@@ -39,7 +39,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="419dp">
+            android:layout_height="380dp">
 
             <ImageView
                 android:id="@+id/anhBia"
@@ -144,34 +144,21 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
+
             <TextView
                 android:id="@+id/movieName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="224dp"
+                android:layout_marginTop="184dp"
                 android:fontFamily="sans-serif-thin"
                 android:text="Weathering with you"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.712"
+                app:layout_constraintHorizontal_bias="0.748"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="123dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="12dp"
-                android:background="#F44336"
-                android:text="Đặt vé"
-                android:onClick="ThanhToan"
-                android:textColor="#FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.054"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/anhDaiDien" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -184,7 +171,7 @@
                 app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/movieDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"

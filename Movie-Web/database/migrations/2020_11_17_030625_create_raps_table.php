@@ -15,8 +15,9 @@ class CreateRapsTable extends Migration
     {
         Schema::create('raps', function (Blueprint $table) {
             $table->id();
-            $table->integer('so_hang');
-            $table->integer('so_cot');
+            $table->tinyInteger('so_luong_ghe');
+            $table->integer('id_chi_nhanh');
+            $table->tinyInteger('trang_thai');
             $table->timestamps();
         });
     }

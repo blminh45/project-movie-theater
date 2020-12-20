@@ -1,39 +1,37 @@
 package com.example.movieapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.Manifest;
 import android.app.ActivityOptions;
+import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Build;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.net.DatagramPacket;
+import java.util.Calendar;
 
 public class SignUpActivity extends AppCompatActivity {
     TextInputLayout regName,regUsername,regEmail,regPhone,regPassword;
+    TextInputEditText regBirth;
     Button regBtn,regToLoginBtn,chooseBtn;
     ImageView mImageView;
     ImageView image;
     TextView logoText,sloganText;
+    DatePickerDialog.OnDateSetListener setListener;
     private static final int  IMAGE_PICK_CODE = 1000;
     private static final int  PERMISSION_CODE = 1001;
     @Override
@@ -45,9 +43,35 @@ public class SignUpActivity extends AppCompatActivity {
         regEmail= findViewById(R.id.email);
         regPhone= findViewById(R.id.phone);
         regPassword= findViewById(R.id.password);
+        regBirth = findViewById(R.id.birth);
 
         mImageView = findViewById(R.id.img);
         chooseBtn = findViewById(R.id.choose_image_btn);
+
+        Calendar calendar = Calendar.getInstance();
+        final int year = calendar.get(Calendar.YEAR);
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        regBirth.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        SignUpActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        setListener,year,month,day);
+                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                 datePickerDialog.show();
+            }
+        });
+
+        setListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+                String date = day+"/"+month+"/"+year;
+                regBirth.setText(date);
+            }
+        };
     }
     private Boolean validateName(){
         String val = regName.getEditText().getText().toString();

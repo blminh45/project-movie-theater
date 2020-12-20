@@ -1,3 +1,4 @@
+include ':fragment-1.2.4'
 include ':facebooksdk'
 include ':facebook'
 include ':facebook-login'

@@ -16,7 +16,7 @@
                         <span>Quản lí phim</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="/phim/danh-sach-phim">Danh sách phim</a></li>
+                        <li><a href="{{ url('phim/danh-sach-phim') }}">Danh sách phim</a></li>
                         <li><a href="/phim/them-phim">Thêm phim</a></li>
                         <li><a href="/phim/cap-nhat-phim">Cập nhật phim</a></li>
                     </ul>

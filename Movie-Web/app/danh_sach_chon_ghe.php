@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class nhan_vien extends Model
+class danh_sach_chon_ghe extends Model
 {
     //
 }
