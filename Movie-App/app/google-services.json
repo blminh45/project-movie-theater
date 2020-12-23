@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "89191285436",
-    "firebase_url": "https://signup-aac6d.firebaseio.com",
-    "project_id": "signup-aac6d",
-    "storage_bucket": "signup-aac6d.appspot.com"
+    "project_number": "334984326174",
+    "firebase_url": "https://forgotpassword-ad4cd.firebaseio.com",
+    "project_id": "forgotpassword-ad4cd",
+    "storage_bucket": "forgotpassword-ad4cd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:89191285436:android:bb553081547d85b4c946b9",
+        "mobilesdk_app_id": "1:334984326174:android:b7313435f6ade6827c920f",
         "android_client_info": {
           "package_name": "com.example.movieapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "89191285436-aare78e8rh2prl0frg505a387m514qh0.apps.googleusercontent.com",
+          "client_id": "334984326174-i1r3lh4vcu8m8bf20fb0n024fegv74ap.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCzg0MsvKNQaxhLA7NN7xBrCebJySWW-eI"
+          "current_key": "AIzaSyA0Q1UK_JJJ2YPF-6b3cGNfhw-ZRqAAZR4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "89191285436-aare78e8rh2prl0frg505a387m514qh0.apps.googleusercontent.com",
+              "client_id": "334984326174-i1r3lh4vcu8m8bf20fb0n024fegv74ap.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
