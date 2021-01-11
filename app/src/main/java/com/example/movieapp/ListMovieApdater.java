@@ -7,11 +7,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class ListMovieApdater extends FragmentStatePagerAdapter {
-    private String listTab[] = {"Đang chiếu" , "Sắp chiếu"};
+    private String listTab[] = {"Tất cả","Đang chiếu" , "Sắp chiếu"};
+    private TabTatCa tabTatCa;
     private TabDangChieu tabDangChieu;
     private TabSapChieu tabSapChieu;
     public ListMovieApdater(@NonNull FragmentManager fm) {
         super(fm);
+        tabTatCa = new TabTatCa();
         tabDangChieu = new TabDangChieu();
         tabSapChieu = new TabSapChieu();
     }
@@ -20,9 +22,12 @@ public class ListMovieApdater extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == 0){
-            return tabDangChieu;
+            return tabTatCa;
         }
         if(position == 1){
+            return tabDangChieu;
+        }
+        if(position == 2){
             return tabSapChieu;
         }
         return null;

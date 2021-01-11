@@ -49,9 +49,9 @@ public class ChooseChairActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(ChooseChairActivity.this , DanhSachGhe[position] , Toast.LENGTH_SHORT).show();
                 mReply = DanhSachGhe[position];
-
                 selectedItem = parent.getItemAtPosition(position).toString();
                 GridViewItems = (TextView) view;
+                int vitri = position;
 
 
                 if(count==0){

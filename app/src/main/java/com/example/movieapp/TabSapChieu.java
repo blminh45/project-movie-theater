@@ -13,7 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class TabSapChieu extends Fragment {
     private View sapChieuRootView;
@@ -25,30 +30,48 @@ public class TabSapChieu extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         sapChieuRootView = inflater.inflate(R.layout.activity_tab_sap_chieu_recycler_view, container , false);
+        recyclerViewSapChieu =(RecyclerView)sapChieuRootView.findViewById(R.id.recycler_sap_chieu);
         createData();
-        initView(sapChieuRootView);
+
+        initView(sapChieuRootView,listSapChieu);
         return sapChieuRootView;
     }
     public void createData(){
-        listSapChieu.add(new Phim(R.drawable.p12, "Đứa con thời tiết" , "Tình cảm" , 9 , 18));
-        listSapChieu.add(new Phim(R.drawable.p1, "Cục nợ hóa cục cưng" , "Tình cảm" , 8 , 18));
-        listSapChieu.add(new Phim(R.drawable.p2, "Lật mặt 48H" , "Hành động" , 7 , 18));
-        listSapChieu.add(new Phim(R.drawable.p3, "Em là của em" , "Tình cảm" , 6 , 18));
-        listSapChieu.add(new Phim(R.drawable.p4, "Chị Mười Ba" , "Hành động" , 8 , 18));
+        String jSonString = null;
+        try{
+            jSonString = new APIGetting(getActivity()).execute(new Phim()).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        get_list_word(jSonString);
     }
-    public void initView(View view){
-        recyclerViewSapChieu =(RecyclerView)view.findViewById(R.id.recycler_sap_chieu);
-        recyclerViewSapChieu.setHasFixedSize(true);
+    private void get_list_word(String jSonString){
+        try{
+            listSapChieu = new ArrayList<>();
+            JSONArray jr=  new JSONArray(jSonString);
+            int len = jr.length();
+            for(int i= 0 ; i<len;i++){
+                JSONObject jb = (JSONObject) jr .getJSONObject(i);
+                Phim phim = new Phim();
+                phim.setName(jb.getString("ten_phim"));
+                phim.setPoster(jb.getString("hinh_anh"));
+                phim.setDiem(9);
+                phim.setTuoi(18);
+                phim.setTheLoai(jb.getString("id_the_loai"));
+                listSapChieu.add(phim);
+            }
 
-        gridLayoutManagerSapChieu = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-        recyclerViewSapChieu.setLayoutManager(gridLayoutManagerSapChieu);
-//        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL , false);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-        SapChieuAdapter sapChieuAdapter = new SapChieuAdapter(listSapChieu, getContext());
-        recyclerViewSapChieu.setAdapter(sapChieuAdapter);
-        showListSearch();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
-    public void showListSearch(){
+    public void initView(View view,ArrayList<Phim> listSapChieu){
+        initRecyclerView(listSapChieu);
+        showListSearch(listSapChieu);
+    }
+    public void showListSearch( ArrayList<Phim> listSapChieu){
         field = (SearchView)sapChieuRootView.findViewById(R.id.searchSapChieu);
         field.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -59,13 +82,7 @@ public class TabSapChieu extends Fragment {
             @Override
             public boolean onQueryTextChange(String getText) {
                 if(getText.isEmpty()) {
-                    recyclerViewSapChieu =(RecyclerView)getActivity().findViewById(R.id.recycler_sap_chieu);
-                    recyclerViewSapChieu.setHasFixedSize(true);
-
-                    gridLayoutManagerSapChieu = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-                    recyclerViewSapChieu.setLayoutManager(gridLayoutManagerSapChieu);
-                    SapChieuAdapter sapChieuAdapter = new SapChieuAdapter( listSapChieu , getContext());
-                    recyclerViewSapChieu.setAdapter(sapChieuAdapter);
+                    initRecyclerView(listSapChieu);
                 }
                 ArrayList<Phim> resultSC = new ArrayList<>();
                 int len = listSapChieu.size();
@@ -74,15 +91,17 @@ public class TabSapChieu extends Fragment {
                         resultSC.add(listSapChieu.get(i));
                 }
 
-                recyclerViewSapChieu = (RecyclerView)getActivity().findViewById(R.id.recycler_sap_chieu);
-                recyclerViewSapChieu.setHasFixedSize(true);
-                gridLayoutManagerSapChieu = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-                recyclerViewSapChieu.setLayoutManager(gridLayoutManagerSapChieu);
-                SapChieuAdapter sapChieuAdapter = new SapChieuAdapter( resultSC , getContext());
-                recyclerViewSapChieu.setAdapter(sapChieuAdapter);
+                initRecyclerView(resultSC);
                 return false;
             }
         });
     }
-
+    public  void initRecyclerView(ArrayList<Phim> lst)
+    {
+        recyclerViewSapChieu.setHasFixedSize(true);
+        gridLayoutManagerSapChieu = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
+        recyclerViewSapChieu.setLayoutManager(gridLayoutManagerSapChieu);
+        TatCaAdapter sapChieuAdapter = new TatCaAdapter( lst , getContext());
+        recyclerViewSapChieu.setAdapter(sapChieuAdapter);
+    }
 }

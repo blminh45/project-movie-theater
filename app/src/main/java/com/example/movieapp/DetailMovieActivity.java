@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.squareup.picasso.Picasso;
 
 public class DetailMovieActivity extends AppCompatActivity {
     private ViewPager viewPagerLichChieu;
@@ -42,7 +43,8 @@ public class DetailMovieActivity extends AppCompatActivity {
         String theloai = intent.getStringExtra("MovieTheLoai");
         String diem = intent.getStringExtra("MovieDiem");
         String tuoi = intent.getStringExtra("MovieTuoi");
-        int number = Integer.parseInt(poster);
+        String trailer = intent.getStringExtra("MovieTrailer");
+//        int number = Integer.parseInt(poster);
         movieName =(TextView)findViewById(R.id.movieName);
         movieTuoi =(TextView)findViewById(R.id.movieTuoi);
         movieDiem=(TextView)findViewById(R.id.movieDiem);
@@ -50,7 +52,8 @@ public class DetailMovieActivity extends AppCompatActivity {
         movieName.setText(name);
         movieDiem.setText(diem);
         movieTuoi.setText(tuoi+"+");
-        anhDaiDien.setImageResource(number);
+//        anhDaiDien.setImageResource(number);
+        Picasso.get().load("http://dashboard-movie-web.herokuapp.com/images/"+poster).into(anhDaiDien);
     }
 
 
@@ -63,7 +66,10 @@ public class DetailMovieActivity extends AppCompatActivity {
     }
 
     public void trailer(View view) {
+        Intent intent1 = getIntent();
+        String trailer = intent1.getStringExtra("MovieTrailer");
         Intent intent = new Intent(this, WatchTrailerActivity.class);
+        intent.putExtra("Trailer", trailer);
         startActivity(intent);
     }
     public void DatVe(View view) {

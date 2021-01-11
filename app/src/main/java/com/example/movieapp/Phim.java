@@ -1,57 +1,76 @@
 package com.example.movieapp;
 
 public class Phim {
-    private int Poster;
+    private String Poster;
     private String Name;
     private String TheLoai;
     private float Diem;
     private int Tuoi;
+    private String Trailer;
 
-    public Phim(int poster, String name, String theLoai, float diem, int tuoi) {
+    public Phim(String poster, String name, String theLoai, float diem, int tuoi , String trailer) {
         Poster = poster;
         Name = name;
         TheLoai = theLoai;
         Diem = diem;
         Tuoi = tuoi;
+        Trailer =trailer;
     }
 
-    public int getPoster() {
+    public Phim() {
+        Poster = "";
+        Name = "";
+        TheLoai = "";
+        Diem = 0;
+        Tuoi = 0;
+        Trailer="";
+    }
+
+    public String getPoster() {
         return Poster;
-    }
-
-    public void setPoster(int poster) {
-        Poster = poster;
     }
 
     public String getName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
-
     public String getTheLoai() {
         return TheLoai;
-    }
-
-    public void setTheLoai(String theLoai) {
-        TheLoai = theLoai;
     }
 
     public float getDiem() {
         return Diem;
     }
 
-    public void setDiem(float diem) {
-        Diem = diem;
-    }
-
     public int getTuoi() {
         return Tuoi;
     }
 
+    public void setPoster(String poster) {
+        Poster = poster;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setTheLoai(String theLoai) {
+        TheLoai = theLoai;
+    }
+
+    public void setDiem(float diem) {
+        Diem = diem;
+    }
+
     public void setTuoi(int tuoi) {
         Tuoi = tuoi;
+    }
+
+    public String getTrailer() {
+        return Trailer;
+    }
+
+    public void setTrailer(String trailer) {
+        Trailer = trailer;
     }
 }

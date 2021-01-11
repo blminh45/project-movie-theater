@@ -13,433 +13,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cee0153-80fc-4444-9704-c7bc21d98422" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIGetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIPhim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabTatCa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TatCaAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_tat_ca_phim_recycler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_tat_ca.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/credentials.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/google-services.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/libs/YouTubeAndroidPlayerApi.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/androidTest/java/com/example/movieapp/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/AndroidManifest.xml.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/ic_launcher-playstore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/ActivityMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/DangChieuAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/DetailMovieApdater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/InforActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/ListMovieActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/ListMovieApdater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/LoginActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/Notification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/NowSlide.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/PayActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/Phim.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/Profile/ProfileFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/Profile/ProfileViewPagerAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/Profile/Profile_DealFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/ProfileActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/SapChieuAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/SignUpActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/SlidePagerAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/TabBinhLuan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/TabDangChieu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/TabLichChieu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/TabSapChieu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/TabThongTin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/TrailerActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/WatchTrailerActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/WillSlide.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/ZoomOutPageTransformer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/New1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/New2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/New3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/New4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/New5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/Will1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/Will2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/Will3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/Will4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/java/com/example/movieapp/fragments/Will5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/animation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/bottom_animation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/slide_in_from_left.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/slide_in_from_right.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/slide_out_to_left.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/slide_out_to_right.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/anim/top_animation.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/account.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ava_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/background_main.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/backgroundavg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/backhome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/btndanhsach.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/btnhome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/btnlogin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/btnmenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/btnuser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/checked.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/filter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/forgot_password.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/gmail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/go_back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/grad.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_arrow_back.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_arrow_right.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_profile_calendar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_profile_history.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_profile_info.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/ic_search_black_24dp.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/img_menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/imgbackground.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/imgbackground2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/left_arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/live.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/logo_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/menu_bap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/menu_phim.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/p9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phim9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/phone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/drawable/setpassword.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/font/antic.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/font/bungee.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/font/muli.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/font/muli_black.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/font/muli_extralight.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/font/muli_light.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_choose_chair.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_detail_movie.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_infor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_list_movie.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_notification.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_now_slide.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_pay.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_profile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_binh_luan.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_dang_chieu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_dang_chieu_recycler_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_lich_chieu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_sap_chieu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_sap_chieu_recycler_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_tab_thong_tin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_trailer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_watch_trailer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/activity_will_slide.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/fragment_profile_deal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/header_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/item_dang_chieu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/item_sap_chieu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/new1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/new2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/new3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/new4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/new5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/page_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/page_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/page_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/page_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/layout/page_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/menu/popup_menu_filter.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-hdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-mdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/values/font_certs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/values/preloaded_fonts.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/app/src/test/java/com/example/movieapp/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/facebook-login/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/facebook-login/facebook-login.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/facebook/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/facebook/facebook.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/facebooksdk/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/facebooksdk/facebook.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/fragment-1.2.4/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/fragment-1.2.4/fragment-1.2.4.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/consumer-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/src/androidTest/java/com/example/mylibrary/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/mylibrary/src/test/java/com/example/mylibrary/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-App/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/.styleci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Console/Commands/dbcreate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/CheckForMaintenanceMode.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/Providers/RouteServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/chi_nhanh.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/danh_sach_chon_ghe.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/danh_sach_ghe.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/ghe.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/khach_hang.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/phim.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/rap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/suat_chieu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/the_loai.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/app/ve.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/broadcasting.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/hashing.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/config/view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_16_235609_create_ghes_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_17_030613_create_ves_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_17_030625_create_raps_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_17_154034_create_chi_nhanhs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_17_154114_create_suat_chieus_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_17_154233_create_khach_hangs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_20_072435_create_the_loais_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_11_23_142528_create_phims_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_12_03_093410_create_danh_sach_ghes_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/migrations/2020_12_03_094359_create_danh_sach_chon_ghes_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/seeds/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/seeds/PhimSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/database/seeds/TheLoaiSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/font.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/jqvmap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/lightbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/minimal.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/monthly.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/morris.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/style-responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/g9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/mail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/minimal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/nav-expand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/pass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/images/search-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.dcjqaccordion.2.7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.fileupload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.nicescroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.scrollTo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.slimscroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.vmap.asia.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.vmap.australia.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.vmap.europe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.vmap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.vmap.sampledata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery.vmap.world.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/jquery2.0.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/lightbox-plus-jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/monthly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/raphael-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/mix-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/public/web.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/sass/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/includes/banner.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/includes/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/includes/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/layouts/default.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/404.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/cap-nhat-phim.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/chartjs.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/dang-nhap.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/danh-sach-phim.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/danh-sach-rap.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/danh-sach-thanh-vien.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/dropzone.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/flot_chart.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/fontawesome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/form_validation.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/gallery.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/google_map.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/mail.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/mail_compose.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/registration.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/responsive_table.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/them-phim.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/trang-chu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/resources/views/pages/vector_map.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/routes/channels.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/tests/CreatesApplication.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Movie-Web/webpack.mix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DangChieuAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieApdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieApdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Phim.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Phim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/SapChieuAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabDangChieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabDangChieu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabSapChieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabSapChieu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/WatchTrailerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/WatchTrailerActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_dang_chieu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_sap_chieu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_dang_chieu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_sap_chieu.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -505,11 +100,11 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-11-04T09:34:12.429Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/project-movie-theater" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-911143122">
@@ -626,22 +221,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="56" key="#app/0.0.1536.824@0.0.1536.824" timestamp="1604484025784" />
-    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1606877277728">
+    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1610355193683">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606877277728" />
+    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610355193683" />
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606316470050">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1606316470050" />
+    <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1608715526185">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1608715526185" />
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606312748975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1606312748975" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604459240666">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609780732665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604459240666" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1609780732665" />
     <state x="100" y="100" width="1336" height="624" key="AVDManager" timestamp="1606794301982">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -650,50 +249,50 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="167" key="AndroidCreateResourceDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1606837613483" />
-    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1606321934964">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1609740346527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1606321934964" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606622644812">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1609740346527" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610348608128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606622644812" />
-    <state width="1476" height="201" key="GridCell.Tab.0.bottom" timestamp="1606883661294">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610348608128" />
+    <state width="1476" height="201" key="GridCell.Tab.0.bottom" timestamp="1610356616383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606883661294" />
-    <state width="1476" height="201" key="GridCell.Tab.0.center" timestamp="1606883661293">
+    <state width="1476" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610356616383" />
+    <state width="1476" height="201" key="GridCell.Tab.0.center" timestamp="1610356616383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="201" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606883661293" />
-    <state width="1476" height="201" key="GridCell.Tab.0.left" timestamp="1606883661293">
+    <state width="1476" height="201" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610356616383" />
+    <state width="1476" height="201" key="GridCell.Tab.0.left" timestamp="1610356616383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="201" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606883661293" />
-    <state width="1476" height="201" key="GridCell.Tab.0.right" timestamp="1606883661294">
+    <state width="1476" height="201" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610356616383" />
+    <state width="1476" height="201" key="GridCell.Tab.0.right" timestamp="1610356616383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="201" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606883661294" />
-    <state width="1476" height="258" key="GridCell.Tab.1.bottom" timestamp="1606877684301">
+    <state width="1476" height="201" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610356616383" />
+    <state width="1476" height="258" key="GridCell.Tab.1.bottom" timestamp="1610356570721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="258" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606877684301" />
-    <state width="1476" height="258" key="GridCell.Tab.1.center" timestamp="1606877684301">
+    <state width="1476" height="258" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610356570721" />
+    <state width="1476" height="258" key="GridCell.Tab.1.center" timestamp="1610356570721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="258" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606877684301" />
-    <state width="1476" height="258" key="GridCell.Tab.1.left" timestamp="1606877684301">
+    <state width="1476" height="258" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610356570721" />
+    <state width="1476" height="258" key="GridCell.Tab.1.left" timestamp="1610356570721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="258" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606877684301" />
-    <state width="1476" height="258" key="GridCell.Tab.1.right" timestamp="1606877684301">
+    <state width="1476" height="258" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610356570721" />
+    <state width="1476" height="258" key="GridCell.Tab.1.right" timestamp="1610356570721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1476" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606877684301" />
-    <state x="337" y="36" key="SettingsEditor" timestamp="1604482415101">
+    <state width="1476" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610356570721" />
+    <state x="337" y="36" key="SettingsEditor" timestamp="1609738970996">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="337" y="36" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604482415101" />
+    <state x="337" y="36" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1609738970996" />
     <state x="584" y="190" key="chooseDestDirectoryDialog" timestamp="1603851143466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
