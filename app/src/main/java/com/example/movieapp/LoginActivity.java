@@ -4,6 +4,7 @@ import android.app.ActivityOptions;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -11,7 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,6 +36,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,8 +54,8 @@ public class LoginActivity extends AppCompatActivity {
     int RC_SIGN_IN = 0;
     private LoginButton login;
     private CallbackManager callbackManager;
+    private String namefb,idfb;
     public static final int SCROLL_DELTA = 100;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_fb);
         loginGg = findViewById(R.id.login_gg);
-        ImageView img = findViewById(R.id.img);
-        TextView fullname=findViewById(R.id.fullname),email = findViewById(R.id.email);
         //login google
         loginGg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,11 +86,33 @@ public class LoginActivity extends AppCompatActivity {
         login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent intent = new Intent(LoginActivity.this,InforActivity.class);
-                startActivity(intent);
-                Log.d("demo","Đăng nhập thành công");
-            }
+                Intent intent = new Intent(LoginActivity.this, InforActivity.class);
+                GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+                                try {
+                                    namefb = object.getString("name");
+                                    idfb = object.getString("id");
+                                    //fullname.setText(namefb);
+                                    //Picasso.get().load("https://graph.facebook.com/" + idfb + "/picture?type=large").into(img);
+                                    //Glide.with(InforActivity.this).load("https://graph.facebook.com/" + idfb + "/picture?type=large").into(img);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
 
+                                }
+                            }
+                        });
+                Bundle bundle = new Bundle();
+                bundle.putString("fields","gender,name,id,first_name,last_name");
+                graphRequest.setParameters(bundle);
+                graphRequest.executeAsync();
+
+                intent.putExtra("count_login",1);
+                intent.putExtra("namefb",namefb);
+                intent.putExtra("idfb",idfb);
+                startActivityForResult(intent, RC_SIGN_IN);
+            }
             @Override
             public void onCancel() {
 
@@ -136,8 +160,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach
@@ -145,37 +169,6 @@ public class LoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         }
-        GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
-                new GraphRequest.GraphJSONObjectCallback() {
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.d("Demo",object.toString());
-                        try {
-                            String name = object.getString("name");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-        Bundle bundle = new Bundle();
-        bundle.putString("fields","gender,name,id,first_name,last_name");
-        graphRequest.setParameters(bundle);
-        graphRequest.executeAsync();
-    }
-
-    AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
-        @Override
-        protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-            if(currentAccessToken == null){
-                LoginManager.getInstance().logOut();
-            }
-        }
-    };
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        accessTokenTracker.stopTracking();
     }
 
     private Boolean validateUsername() {
@@ -222,9 +215,10 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            Intent intent = new Intent(this,InforActivity.class);
             //String message = account.getEmail();
             //intent.putExtra("email", message);
+            Intent intent = new Intent(LoginActivity.this,InforActivity.class);
+            intent.putExtra("count_login",-1);
             startActivity(intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

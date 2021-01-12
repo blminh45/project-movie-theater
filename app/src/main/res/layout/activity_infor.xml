@@ -206,15 +206,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <Button
                     android:id="@+id/logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/ic_arrow_right"
-                    android:gravity="start|center"
-                    android:text="Dang xuat" />
-
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#000"
+                    android:text="Đăng Xuất"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:transitionName="button_tran" />
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_fb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textSize="27dp" />
             </LinearLayout>
         </LinearLayout>
 
