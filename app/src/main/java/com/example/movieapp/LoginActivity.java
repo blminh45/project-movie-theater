@@ -1,8 +1,6 @@
 package com.example.movieapp;
 
 import android.app.ActivityOptions;
-import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,13 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -34,13 +30,19 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.concurrent.ExecutionException;
 
 public class LoginActivity extends AppCompatActivity {
-
     Button SignUp, btn_login;
     ImageView image;
     TextView logoText, sloganText;
@@ -50,8 +52,10 @@ public class LoginActivity extends AppCompatActivity {
     int RC_SIGN_IN = 0;
     private LoginButton login;
     private CallbackManager callbackManager;
-    public static final int SCROLL_DELTA = 100;
-
+    private String namefb,idfb;
+    private Intent intent;
+    ArrayList<KhachHang> lst_kh;
+    public LinkedList<KhachHang> lst = new LinkedList<KhachHang>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_fb);
         loginGg = findViewById(R.id.login_gg);
-        ImageView img = findViewById(R.id.img);
-        TextView fullname=findViewById(R.id.fullname),email = findViewById(R.id.email);
         //login google
         loginGg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,11 +86,33 @@ public class LoginActivity extends AppCompatActivity {
         login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent intent = new Intent(LoginActivity.this,InforActivity.class);
-                startActivity(intent);
-                Log.d("demo","Đăng nhập thành công");
-            }
+                intent = new Intent(LoginActivity.this, InforActivity.class);
+                GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response) {
+                                try {
+                                    namefb = object.getString("name");
+                                    idfb = object.getString("id");
+                                    //fullname.setText(namefb);
+                                    //Picasso.get().load("https://graph.facebook.com/" + idfb + "/picture?type=large").into(img);
+                                    //Glide.with(InforActivity.this).load("https://graph.facebook.com/" + idfb + "/picture?type=large").into(img);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
 
+                                }
+                            }
+                        });
+                Bundle bundle = new Bundle();
+                bundle.putString("fields","gender,name,id,first_name,last_name");
+                graphRequest.setParameters(bundle);
+                graphRequest.executeAsync();
+
+                intent.putExtra("count_login",1);
+                intent.putExtra("namefb",namefb);
+                intent.putExtra("idfb",idfb);
+                startActivityForResult(intent, RC_SIGN_IN);
+            }
             @Override
             public void onCancel() {
 
@@ -101,6 +125,48 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("demo","Đăng nhập thất bại");
             }
         });
+
+        String jSonString = null;
+        try {
+            jSonString = new KhachHangAPIGetting(this).execute(new KhachHang()).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        if(get_lst_kh(jSonString)){
+            lst = convertToList(lst_kh);
+        }
+
+    }
+
+    private Boolean get_lst_kh(String jSonString) {
+        try {
+            lst_kh = new ArrayList();
+            JSONArray jr = new JSONArray(jSonString);
+            int num = jr.length();
+            for (int i = 0; i < num; i++) {
+                JSONObject jb = (JSONObject) jr.getJSONObject(i);
+                KhachHang khachHang = new KhachHang();
+                khachHang.setSdt(jb.getString("so_dien_thoai"));
+                khachHang.setMatkhau(jb.getString("mat_khau"));
+                khachHang.setTen(jb.getString("ten"));
+                khachHang.setEmail(jb.getString("email"));
+                khachHang.setNgaySinh(jb.getString("ngay_sinh"));
+                khachHang.setDiachi(jb.getString("dia_chi"));
+                lst_kh.add(khachHang);
+            }
+            return true;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public LinkedList<KhachHang> convertToList(ArrayList<KhachHang> arrKhachHang) {
+        LinkedList<KhachHang> lstKhachHang = new LinkedList<KhachHang>();
+        for (KhachHang khachHang : arrKhachHang) {
+            lstKhachHang.addLast(khachHang);
+        }
+        return lstKhachHang;
     }
 
     @Override
@@ -136,8 +202,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
         // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             // The Task returned from this call is always completed, no need to attach
@@ -145,37 +211,6 @@ public class LoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         }
-        GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
-                new GraphRequest.GraphJSONObjectCallback() {
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.d("Demo",object.toString());
-                        try {
-                            String name = object.getString("name");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-        Bundle bundle = new Bundle();
-        bundle.putString("fields","gender,name,id,first_name,last_name");
-        graphRequest.setParameters(bundle);
-        graphRequest.executeAsync();
-    }
-
-    AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
-        @Override
-        protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-            if(currentAccessToken == null){
-                LoginManager.getInstance().logOut();
-            }
-        }
-    };
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        accessTokenTracker.stopTracking();
     }
 
     private Boolean validateUsername() {
@@ -209,7 +244,25 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validateUser(View view) {
+        int sl=0;
         if (!validateUsername() | !validatePassword()) {
+        }
+        else{
+            int len =lst.size();
+            for (int i = 0; i < len; i++) {
+                if (lst.get(i).getSdt().equals(username.getEditText().getText().toString())
+                        &&lst.get(i).getMatkhau().equals(password.getEditText().getText().toString())) {
+                    sl++;
+                    intent = new Intent(LoginActivity.this,InforActivity.class);
+                    intent.putExtra("Ten",lst.get(i).getTen());
+                    intent.putExtra("Diachi",lst.get(i).getDiachi());
+                    intent.putExtra("SDT",lst.get(i).getSdt());
+                    intent.putExtra("Ngaysinh",lst.get(i).getNgaySinh());
+                    intent.putExtra("Matkhau",lst.get(i).getMatkhau());
+                    intent.putExtra("Email",lst.get(i).getEmail());
+                    startActivityForResult(intent,RC_SIGN_IN);
+                }
+            }
         }
     }
 
@@ -222,14 +275,25 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            Intent intent = new Intent(this,InforActivity.class);
             //String message = account.getEmail();
             //intent.putExtra("email", message);
+            intent = new Intent(LoginActivity.this,InforActivity.class);
+            intent.putExtra("count_login",-1);
             startActivity(intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    private String convertHashToString(String text) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] hashInBytes = md.digest(text.getBytes(StandardCharsets.UTF_8));
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashInBytes) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
     }
 }
