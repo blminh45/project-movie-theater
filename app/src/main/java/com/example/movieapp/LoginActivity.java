@@ -1,6 +1,8 @@
 package com.example.movieapp;
 
 import android.app.ActivityOptions;
+import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +15,14 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -26,6 +33,11 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -48,6 +60,8 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_fb);
         loginGg = findViewById(R.id.login_gg);
+        ImageView img = findViewById(R.id.img);
+        TextView fullname=findViewById(R.id.fullname),email = findViewById(R.id.email);
         //login google
         loginGg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,20 +80,25 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         //login facebook
         callbackManager = CallbackManager.Factory.create();
+        login.setPermissions(Arrays.asList("user_gender","user_friends"));
         login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                //code
+                Intent intent = new Intent(LoginActivity.this,InforActivity.class);
+                startActivity(intent);
+                Log.d("demo","Đăng nhập thành công");
             }
 
             @Override
             public void onCancel() {
-                //code
+
+                Log.d("demo","Đóng đăng nhập");
             }
 
             @Override
             public void onError(FacebookException error) {
-                //code
+
+                Log.d("demo","Đăng nhập thất bại");
             }
         });
     }
@@ -126,17 +145,48 @@ public class LoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         }
+        GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
+                new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        Log.d("Demo",object.toString());
+                        try {
+                            String name = object.getString("name");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+        Bundle bundle = new Bundle();
+        bundle.putString("fields","gender,name,id,first_name,last_name");
+        graphRequest.setParameters(bundle);
+        graphRequest.executeAsync();
+    }
+
+    AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
+        @Override
+        protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+            if(currentAccessToken == null){
+                LoginManager.getInstance().logOut();
+            }
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        accessTokenTracker.stopTracking();
     }
 
     private Boolean validateUsername() {
         String val = username.getEditText().getText().toString();
-        String noWhiteSpace = "\\A\\w{4,20}\\z";
+        String noWhiteSpace = "\\A\\w{6,20}\\z";
 
         if (val.isEmpty()) {
-            username.setError("Tài khoản không hợp lệ !!!");
+            username.setError("Tài khoản không được bỏ trống");
             return false;
         } else if (!val.matches(noWhiteSpace)) {
-            username.setError("Tài khoản không được chứa khoảng trắng");
+            username.setError("Tài khoản phải từ 6 đến 20 ký tự");
             return false;
         } else {
             username.setError(null);
@@ -149,7 +199,7 @@ public class LoginActivity extends AppCompatActivity {
         String val = password.getEditText().getText().toString();
 
         if (val.isEmpty()) {
-            password.setError("Mật khẩu còn trống !!!");
+            password.setError("Mật khẩu không được bỏ trống");
             return false;
         } else {
             password.setError(null);
@@ -160,7 +210,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void validateUser(View view) {
         if (!validateUsername() | !validatePassword()) {
-            return;
         }
     }
 
@@ -173,6 +222,10 @@ public class LoginActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
+            Intent intent = new Intent(this,InforActivity.class);
+            //String message = account.getEmail();
+            //intent.putExtra("email", message);
+            startActivity(intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
