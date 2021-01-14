@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.icu.text.IDNA;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.facebook.AccessToken;
@@ -25,6 +27,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.login.Login;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -35,16 +38,23 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.concurrent.ExecutionException;
 
 public class LoginActivity extends AppCompatActivity {
-
     Button SignUp, btn_login;
     ImageView image;
     TextView logoText, sloganText;
@@ -55,7 +65,9 @@ public class LoginActivity extends AppCompatActivity {
     private LoginButton login;
     private CallbackManager callbackManager;
     private String namefb,idfb;
-    public static final int SCROLL_DELTA = 100;
+    private Intent intent;
+    ArrayList<KhachHang> lst_kh;
+    public LinkedList<KhachHang> lst = new LinkedList<KhachHang>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
         login.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Intent intent = new Intent(LoginActivity.this, InforActivity.class);
+                intent = new Intent(LoginActivity.this, InforActivity.class);
                 GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
                         new GraphRequest.GraphJSONObjectCallback() {
                             @Override
@@ -125,6 +137,48 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("demo","Đăng nhập thất bại");
             }
         });
+
+        String jSonString = null;
+        try {
+            jSonString = new APIGetting(this).execute(new KhachHang()).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        if(get_lst_kh(jSonString)){
+            lst = convertToList(lst_kh);
+        }
+
+    }
+
+    private Boolean get_lst_kh(String jSonString) {
+        try {
+            lst_kh = new ArrayList();
+            JSONArray jr = new JSONArray(jSonString);
+            int num = jr.length();
+            for (int i = 0; i < num; i++) {
+                JSONObject jb = (JSONObject) jr.getJSONObject(i);
+                KhachHang khachHang = new KhachHang();
+                khachHang.setSdt(jb.getString("so_dien_thoai"));
+                khachHang.setMatkhau(jb.getString("mat_khau"));
+                khachHang.setTen(jb.getString("ten"));
+                khachHang.setEmail(jb.getString("email"));
+                khachHang.setNgaySinh(jb.getString("ngay_sinh"));
+                khachHang.setDiachi(jb.getString("dia_chi"));
+                lst_kh.add(khachHang);
+            }
+            return true;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public LinkedList<KhachHang> convertToList(ArrayList<KhachHang> arrKhachHang) {
+        LinkedList<KhachHang> lstKhachHang = new LinkedList<KhachHang>();
+        for (KhachHang khachHang : arrKhachHang) {
+            lstKhachHang.addLast(khachHang);
+        }
+        return lstKhachHang;
     }
 
     @Override
@@ -202,7 +256,25 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validateUser(View view) {
+        int sl=0;
         if (!validateUsername() | !validatePassword()) {
+        }
+        else{
+            int len =lst.size();
+            for (int i = 0; i < len; i++) {
+                if (lst.get(i).getSdt().equals(username.getEditText().getText().toString())
+                        &&lst.get(i).getMatkhau().equals(password.getEditText().getText().toString())) {
+                    sl++;
+                    intent = new Intent(LoginActivity.this,InforActivity.class);
+                    intent.putExtra("Ten",lst.get(i).getTen());
+                    intent.putExtra("Diachi",lst.get(i).getDiachi());
+                    intent.putExtra("SDT",lst.get(i).getSdt());
+                    intent.putExtra("Ngaysinh",lst.get(i).getNgaySinh());
+                    intent.putExtra("Matkhau",lst.get(i).getMatkhau());
+                    intent.putExtra("Email",lst.get(i).getEmail());
+                    startActivityForResult(intent,RC_SIGN_IN);
+                }
+            }
         }
     }
 
@@ -217,7 +289,7 @@ public class LoginActivity extends AppCompatActivity {
             // Signed in successfully, show authenticated UI.
             //String message = account.getEmail();
             //intent.putExtra("email", message);
-            Intent intent = new Intent(LoginActivity.this,InforActivity.class);
+            intent = new Intent(LoginActivity.this,InforActivity.class);
             intent.putExtra("count_login",-1);
             startActivity(intent);
         } catch (ApiException e) {
@@ -225,5 +297,15 @@ public class LoginActivity extends AppCompatActivity {
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
+    }
+
+    private String convertHashToString(String text) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] hashInBytes = md.digest(text.getBytes(StandardCharsets.UTF_8));
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashInBytes) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
     }
 }

@@ -46,6 +46,7 @@ public class InforActivity extends AppCompatActivity {
     Button logout;
     LoginButton logoutfb;
     private int count_login;
+    private String NameGG,EmailGG;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,9 +89,10 @@ public class InforActivity extends AppCompatActivity {
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
-            String personName = acct.getDisplayName();
+            NameGG = acct.getDisplayName();
+            EmailGG = acct.getEmail();
             Uri personPhoto = acct.getPhotoUrl();
-            fullname.setText(personName);
+            fullname.setText(NameGG);
             Glide.with(this).load(String.valueOf(personPhoto)).into(img);
         }
     }
