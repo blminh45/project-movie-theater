@@ -5,11 +5,11 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 import java.io.IOException;
 
-public class APIGetting extends AsyncTask<KhachHang, String, String> {
+public class KhachHangAPIGetting extends AsyncTask<KhachHang, String, String> {
 
     private Context m_con;
 
-    public APIGetting(Context con) {
+    public KhachHangAPIGetting(Context con) {
         m_con = con;
     }
 
