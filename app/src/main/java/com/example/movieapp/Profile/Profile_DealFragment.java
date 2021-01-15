@@ -61,13 +61,13 @@ public class Profile_DealFragment extends Fragment {
             for (int i = 0; i < num; i++) {
                 JSONObject jb = (JSONObject) jr.getJSONObject(i);
                 HoaDon hd  = new HoaDon();
-                hd.setTenPhim(jb.getString("ten"));
-//                hd.setThoiLuong(jb.getDouble("ThoiLuong"));
-//                hd.setRap(jb.getString("Phim"));
-//                hd.setGhe(jb.getString("Phim"));
-//                hd.setNgayChieu(jb.getString("Phim"));
-//                hd.setGioChieu(jb.getString("Phim"));
-                hd.setDiaChi(jb.getString("dia_chi"));
+                hd.setTenPhim(jb.getString("phim"));
+                hd.setThoiLuong(jb.getString("thoiluong"));
+                hd.setRap(jb.getString("rap"));
+                hd.setGhe(jb.getString("ghe"));
+                hd.setNgayChieu(jb.getString("ngay"));
+                hd.setGioChieu(jb.getString("gio"));
+                hd.setDiaChi(jb.getString("diachi"));
                 lst_hd.add(hd);
             }
             return true;

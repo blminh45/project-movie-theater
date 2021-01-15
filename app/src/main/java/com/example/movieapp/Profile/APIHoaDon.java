@@ -9,11 +9,11 @@ import java.net.URL;
 
 public class APIHoaDon {
     static HttpURLConnection urlConnection = null;
-    static  String uri ="http://dashboard-movie-web.herokuapp.com/api/khach-hang";
+    static  String uri ="http://dashboard-movie-web.herokuapp.com/api/ve";
     static String getHoaDon(){
         BufferedReader reader = null;
         String result = null;
-        String url = uri+"?get";
+        String url = uri+"";
 
         try {
             URL requestURL = new URL(url);

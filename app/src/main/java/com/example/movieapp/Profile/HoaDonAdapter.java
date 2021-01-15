@@ -34,13 +34,13 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull HoaDonAdapter.ViewHolder holder, int position) {
         HoaDon mCurrent = mHoaDon.get(position);
-        holder.TenPhim.setText(mCurrent.getTenPhim().toString());
-//        holder.ThoiLuong.setText(mCurrent.toString());
-//        holder.Rap.setText(mCurrent.toString());
-//        holder.Ghe.setText(mCurrent.toString());
-//        holder.NgayChieu.setText(mCurrent.toString());
-//        holder.GioChieu.setText(mCurrent.toString());
-        holder.DiaChi.setText(mCurrent.getDiaChi().toString());
+        holder.TenPhim.setText("Phim "+mCurrent.getTenPhim());
+        holder.ThoiLuong.setText("Thời gian "+mCurrent.getThoiLuong());
+        holder.Rap.setText("Rạp "+mCurrent.getRap());
+        holder.Ghe.setText("Ghế "+mCurrent.getGhe());
+        holder.NgayChieu.setText("Ngày "+mCurrent.getNgayChieu());
+        holder.GioChieu.setText("Giờ "+mCurrent.getGioChieu());
+        holder.DiaChi.setText("Địa chỉ "+mCurrent.getDiaChi());
     }
 
     @Override
@@ -55,11 +55,11 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView,HoaDonAdapter adapter) {
             super(itemView);
             TenPhim = itemView.findViewById(R.id.TenPhim);
-//            ThoiLuong = itemView.findViewById(R.id.ThoiLuong);
-//            Rap = itemView.findViewById(R.id.TenRap);
-//            Ghe = itemView.findViewById(R.id.Ghe);
-//            NgayChieu = itemView.findViewById(R.id.NgayChieu);
-//            GioChieu = itemView.findViewById(R.id.GioChieu);
+            ThoiLuong = itemView.findViewById(R.id.ThoiLuong);
+            Rap = itemView.findViewById(R.id.TenRap);
+            Ghe = itemView.findViewById(R.id.Ghe);
+            NgayChieu = itemView.findViewById(R.id.NgayChieu);
+            GioChieu = itemView.findViewById(R.id.GioChieu);
             DiaChi = itemView.findViewById(R.id.DiaChi);
             this.mAdapter = adapter;
         }
