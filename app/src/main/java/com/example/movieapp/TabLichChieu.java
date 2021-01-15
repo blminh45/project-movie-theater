@@ -17,25 +17,31 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import static android.app.Activity.RESULT_OK;
-
 public class TabLichChieu extends Fragment {
     private View lichChieuRootView;
     GridView GioChieu;
-    private Spinner spinnerThanhPho;
+    private Spinner spinnerChiNhanh;
     private Spinner spinnerRap;
-    private  List<String> listThanhPho;
-    private  List<String> listRap;
-    String[] DanhSachGio = {"09:45","10:45","11:45","12:45","1:45","2:45","4:45","6:45","8:45","22:45","09:45","10:45","09:45","10:45","09:45","10:45",};
-//    String selectedItem;
-//    TextView GridViewItems,BackSelectedItem;
-//    int backposition = -1;
-//    int count = 0;
 
 
+    private  ArrayList<ChiNhanh> ListChiNhanh =new ArrayList<>();
+    private  ArrayList<Rap> ListRap = new ArrayList<>();
+
+
+    private List<String> listchinhanh = new ArrayList<>();
+    private  List<String> listrap = new ArrayList<>();
+    String[] DanhSachGio = {"09:00","12:00","15:00","18:00","21:00"};
 
 
     @Nullable
@@ -43,13 +49,11 @@ public class TabLichChieu extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         lichChieuRootView = inflater.inflate(R.layout.activity_tab_lich_chieu, container , false);
         showGridView();
-        showThanhPho();
+        showChiNhanh();
         showRap();
         return lichChieuRootView;
 
     }
-
-
     public void showGridView(){
 
         GioChieu = lichChieuRootView.findViewById(R.id.GioChieu);
@@ -64,48 +68,79 @@ public class TabLichChieu extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText( getActivity() , "" + DanhSachGio[position], Toast.LENGTH_SHORT).show();
                 TextView time = (TextView)lichChieuRootView.findViewById(R.id.actived_time);
+                TextView ghe = (TextView)lichChieuRootView.findViewById(R.id.actived_chair);
                 time.setText(" "+DanhSachGio[position]+" ");
-//                selectedItem = parent.getItemAtPosition(position).toString();
-//
-//                GridViewItems = (TextView) view;
-//
-//
-//                if(count==0){
-//                    GridViewItems.setBackgroundColor(Color.parseColor("#00BCD4"));
-//                    GridViewItems.setTextColor(Color.parseColor("#fdfcfa"));
-//                    BackSelectedItem = (TextView) GioChieu.getChildAt(backposition);
-//                    count = 1;
-//                }
-//                else {
-//                    GridViewItems.setBackgroundColor(Color.parseColor("#FFFFFF"));
-//                    GridViewItems.setTextColor(Color.parseColor("#000000"));
-//                    BackSelectedItem = (TextView) GioChieu.getChildAt(backposition);
-//                    count = 0;
-//                }
+                ghe.setText("--");
             }
         });
     }
-    public void showThanhPho(){
-        listThanhPho = new ArrayList<>();
-        listThanhPho.add("TP Hồ Chí Minh");
-        listThanhPho.add("Hà Nội");
-        listThanhPho.add("Bình Thuận");
-        listThanhPho.add("Bến Tre");
-        spinnerThanhPho = lichChieuRootView.findViewById(R.id.ThanhPho);
-        ArrayAdapter spinnerAdapter = new ArrayAdapter<>(getActivity(), R.layout.support_simple_spinner_dropdown_item, listThanhPho);
+    public void showChiNhanh(){
+        String jSonString = null;
+        try{
+            jSonString = new ChiNhanhAPIGetting(getActivity()).execute(new ChiNhanh()).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        get_list_chi_nhanh(jSonString);
 
-        spinnerThanhPho.setAdapter(spinnerAdapter);
+        spinnerChiNhanh = lichChieuRootView.findViewById(R.id.ThanhPho);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter<>(getActivity(), R.layout.support_simple_spinner_dropdown_item, listchinhanh);
+        spinnerChiNhanh.setAdapter(spinnerAdapter);
     }
+    private void get_list_chi_nhanh(String jSonString){
+        try{
+            listchinhanh = new ArrayList<>();
+            JSONArray jr=  new JSONArray(jSonString);
+            int len = jr.length();
+            for(int i= 0 ; i<len;i++){
+                JSONObject jb = (JSONObject) jr .getJSONObject(i);
+                ChiNhanh chiNhanh = new ChiNhanh();
+                chiNhanh.setIDChiNhanh(Integer.parseInt(jb.getString("id")));
+                chiNhanh.setTenChiNhanh(jb.getString("ten_chi_nhanh"));
+                chiNhanh.setDiaChi(jb.getString("dia_chi"));
+                chiNhanh.setTrangThai(jb.getString("trang_thai"));
+                ListChiNhanh.add(chiNhanh);
+                listchinhanh.add(chiNhanh.getIDChiNhanh()+"-"+chiNhanh.getTenChiNhanh());
+            }
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     public void showRap(){
-        listRap = new ArrayList<>();
-        listRap.add("Galaxy Nguyễn Du");
-        listRap.add("Galaxy Tân Bình");
-        listRap.add("Galaxy Kinh Dương Vương");
-        listRap.add("Galaxy Quang Trung");
+        String jSonString = null;
+        try{
+            jSonString = new RapAPIGetting(getActivity()).execute(new Rap()).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        get_list_rap(jSonString);
         spinnerRap = lichChieuRootView.findViewById(R.id.Rap);
-        ArrayAdapter spinnerAdapter = new ArrayAdapter<>(getActivity(), R.layout.support_simple_spinner_dropdown_item, listRap);
-        spinnerRap.setAdapter(spinnerAdapter);
+        ArrayAdapter spinnerAdapterRap = new ArrayAdapter<>(getActivity(), R.layout.support_simple_spinner_dropdown_item, listrap);
+        spinnerRap.setAdapter(spinnerAdapterRap);
     }
+    private void get_list_rap(String jSonString){
+        try{
+            listrap = new ArrayList<>();
+            JSONArray jr=  new JSONArray(jSonString);
+            int len = jr.length();
+            for(int i= 0 ; i<len;i++){
+                JSONObject jb = (JSONObject) jr .getJSONObject(i);
+                Rap  rap = new Rap();
+                rap.setIDRap(Integer.parseInt(jb.getString("id")));
+                rap.setIDChiNhanh(Integer.parseInt(jb.getString("id_chi_nhanh")));
+                rap.setTrangThai(Integer.parseInt(jb.getString("trang_thai")));
+                rap.setTenRap(jb.getString("ten_rap"));
+                ListRap.add(rap);
+                listrap.add(rap.getIDRap()+"-"+rap.getTenRap());
+            }
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 }

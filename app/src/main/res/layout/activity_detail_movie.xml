@@ -32,191 +32,185 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="380dp">
-
-            <ImageView
-                android:id="@+id/anhBia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="148dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/p10" />
-
-            <ImageView
-                android:id="@+id/anhDaiDien"
-                android:layout_width="123dp"
-                android:layout_height="190dp"
-                android:layout_marginTop="160dp"
-                app:layout_constraintEnd_toEndOf="@+id/anhBia"
-                app:layout_constraintHorizontal_bias="0.055"
-                app:layout_constraintStart_toStartOf="@+id/anhBia"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/p12" />
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="31dp"
-                android:layout_height="29dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginBottom="68dp"
-                app:layout_constraintBottom_toBottomOf="@+id/anhDaiDien"
-                app:layout_constraintStart_toEndOf="@+id/anhDaiDien"
-                app:layout_constraintTop_toBottomOf="@+id/anhBia"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
-
-            <TextView
-                android:id="@+id/movieDiem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:text="8.4"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/anhDaiDien"
-                app:layout_constraintTop_toBottomOf="@+id/anhBia" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="25dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="90dp"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
-                app:layout_constraintStart_toEndOf="@+id/anhDaiDien"
-                app:layout_constraintTop_toBottomOf="@+id/anhBia"
-                app:srcCompat="@android:drawable/ic_menu_edit" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:text="Chấm điểm"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/anhDaiDien"
-                app:layout_constraintTop_toBottomOf="@+id/anhBia" />
-
-            <TextView
-                android:id="@+id/movieTuoi"
-                android:layout_width="40dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="237dp"
-                android:layout_marginBottom="123dp"
-                android:background="#FF5722"
-                android:gravity="center"
-                android:text="18+"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/anhDaiDien" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginEnd="250dp"
-                android:layout_marginBottom="80dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@android:drawable/ic_menu_recent_history" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="170dp"
-                android:layout_marginBottom="80dp"
-                android:text="118 Phút"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-
-            <TextView
-                android:id="@+id/movieName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="184dp"
-                android:fontFamily="sans-serif-thin"
-                android:text="Weathering with you"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.748"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="28dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="120dp"
-                android:layout_marginBottom="80dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@android:drawable/ic_menu_my_calendar" />
-
-            <TextView
-                android:id="@+id/movieDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginBottom="80dp"
-                android:text="20/09/2019"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/imageView" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="56dp"
-                android:layout_height="54dp"
-                android:layout_marginBottom="4dp"
-                android:onClick="trailer"
-                app:layout_constraintBottom_toTopOf="@+id/anhDaiDien"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="@+id/anhBia"
-                app:srcCompat="@android:drawable/ic_media_play" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabDetailMovie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabIndicatorColor="@android:color/holo_blue_light"
-            app:tabMode="fixed"
-            app:tabSelectedTextColor="@android:color/holo_blue_light"
-            app:tabTextColor="@android:color/black">
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerDetailMovie"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="start">
+            android:orientation="vertical">
 
-        </androidx.viewpager.widget.ViewPager>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp">
+
+                    <ImageView
+                        android:id="@+id/anhBia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="148dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:srcCompat="@drawable/p10" />
+
+                    <ImageView
+                        android:id="@+id/anhDaiDien"
+                        android:layout_width="123dp"
+                        android:layout_height="190dp"
+                        android:layout_marginTop="160dp"
+                        app:layout_constraintEnd_toEndOf="@+id/anhBia"
+                        app:layout_constraintHorizontal_bias="0.055"
+                        app:layout_constraintStart_toStartOf="@+id/anhBia"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/p12" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="31dp"
+                        android:layout_height="29dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="68dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/anhDaiDien"
+                        app:layout_constraintStart_toEndOf="@+id/anhDaiDien"
+                        app:layout_constraintTop_toBottomOf="@+id/anhBia"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+                    <TextView
+                        android:id="@+id/movieDiem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:background="#FF9800"
+                        android:text="8.4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toEndOf="@+id/anhDaiDien"
+                        app:layout_constraintTop_toBottomOf="@+id/anhBia" />
+
+
+                    <TextView
+                        android:id="@+id/movieTuoi"
+                        android:layout_width="40dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="220dp"
+                        android:layout_marginBottom="120dp"
+                        android:background="#FF5722"
+                        android:gravity="center"
+                        android:text="18+"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/anhDaiDien" />
+
+                    <TextView
+                        android:id="@+id/thoiluong_dt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginBottom="76dp"
+                        android:background="#FFEB3B"
+                        android:text="118 Phút"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/movieName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="184dp"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="Weathering with you"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.748"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/movieDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="22dp"
+                        android:layout_marginBottom="40dp"
+                        android:background="#FFEB3B"
+                        android:text="20/09/2019"
+                        android:textColor="#FFFDFD"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="56dp"
+                        android:layout_height="54dp"
+                        android:layout_marginBottom="4dp"
+                        android:onClick="trailer"
+                        app:layout_constraintBottom_toTopOf="@+id/anhDaiDien"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.498"
+                        app:layout_constraintStart_toStartOf="@+id/anhBia"
+                        app:srcCompat="@android:drawable/ic_media_play" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginBottom="76dp"
+                        android:background="#00BCD4"
+                        android:text=" Thời lượng : "
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="41dp"
+                        android:background="#00BCD4"
+                        android:text="  Khởi chiếu : "
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toStartOf="@+id/movieDate"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDetailMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="@android:color/holo_blue_light"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="@android:color/holo_blue_light"
+                    app:tabTextColor="@android:color/black">
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerDetailMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="700dp"
+                    android:layout_gravity="start">
+
+                </androidx.viewpager.widget.ViewPager>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

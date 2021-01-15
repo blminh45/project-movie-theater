@@ -70,7 +70,8 @@
             android:layout_marginTop="15sp"
             android:fontFamily="sans-serif-light"
             android:textColor="@android:color/white"
-            android:textSize="32sp" />
+            android:text="Tên Người Dùng "
+            android:textSize="32sp"/>
 
         <ImageView
             android:layout_width="40dp"
@@ -80,7 +81,8 @@
             android:layout_marginRight="15dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_arrow_back" />
+            android:src="@drawable/ic_arrow_back"
+            android:onClick="Back"/>
 
     </RelativeLayout>
 
@@ -98,34 +100,33 @@
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="vertical">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Email"-->
-<!--                    android:textColor="#3797CF"-->
-<!--                    android:textSize="13sp" />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#3797CF"
+                    android:textSize="13sp" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/email"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="sans-serif-light"-->
-<!--                    android:textColor="#000000"-->
-<!--                    android:textSize="18sp" />-->
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Tài khoản Gmail"
+                    android:textColor="#000000"
+                    android:textSize="18sp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="#E5E5E5" />
 
-<!--                <View-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="1dp"-->
-<!--                    android:layout_marginTop="15dp"-->
-<!--                    android:background="#E5E5E5" />-->
-
-<!--            </LinearLayout>-->
-            <!--
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -144,7 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="0123-456-789"
+                    android:text="Số điện thoại "
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
@@ -156,56 +157,48 @@
 
             </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Facebook"
-                    android:textColor="#3797CF"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="facebook.com/phuongtoan"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-
-                <View
+            <!--
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:background="#E5E5E5" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
-            -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Facebook"
+                        android:textColor="#3797CF"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="facebook.com/phuongtoan"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#E5E5E5" />
+
+                </LinearLayout>
+                -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:orientation="vertical">
-
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_arrow_right"
-                    android:gravity="start|center"
-                    android:onClick="Click"
-                    android:text="Thong tin va lich su giao dich" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                    android:gravity="center"
+                    android:onClick="ClickProfile"
+                    android:text="Thông tin và lịch sử giao dịch" />
                 <Button
                     android:id="@+id/logout"
                     android:layout_width="match_parent"

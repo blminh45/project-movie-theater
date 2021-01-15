@@ -19,48 +19,72 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.*;
+import java.util.concurrent.ExecutionException;
 
 public class TabDangChieu extends Fragment {
     private View dangChieuRootView;
-    ArrayList<Phim> listfive = new ArrayList<>();
-    private RecyclerView recyclerView;
-    private  LinearLayoutManager linearLayoutManager;
-    private StaggeredGridLayoutManager gridLayoutManager;
-    private DangChieuAdapter dangChieuAdapter;
-    private ListMovieActivity listMovieActivity;
+    ArrayList<Phim> listDangChieu = new ArrayList<>();
+    private RecyclerView recyclerViewDangChieu;
+    private StaggeredGridLayoutManager gridLayoutManagerDangChieu;
     private SearchView field;
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         dangChieuRootView = inflater.inflate(R.layout.activity_tab_dang_chieu_recycler_view, container , false);
+        recyclerViewDangChieu =(RecyclerView)dangChieuRootView.findViewById(R.id.recycler_dang_chieu);
         createData();
-        initView(dangChieuRootView);
+        initView(dangChieuRootView,listDangChieu);
         return dangChieuRootView;
     }
     public void createData(){
-        listfive.add(new Phim(R.drawable.p12, "Đứa con thời tiết" , "Tình cảm" , 9 , 18));
-        listfive.add(new Phim(R.drawable.p1, "Cục nợ hóa cục cưng" , "Tình cảm" , 8 , 18));
-        listfive.add(new Phim(R.drawable.p2, "Lật mặt 48H" , "Hành động" , 7 , 18));
-        listfive.add(new Phim(R.drawable.p3, "Em là của em" , "Tình cảm" , 6 , 18));
-        listfive.add(new Phim(R.drawable.p4, "Chị Mười Ba" , "Hành động" , 8 , 18));
+        String jSonString = null;
+        try{
+            jSonString = new APIGetting(getActivity()).execute(new Phim()).get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        get_list_phim(jSonString);
     }
-    public void initView(View view){
-        recyclerView =(RecyclerView)view.findViewById(R.id.recycler_dang_chieu);
-        recyclerView.setHasFixedSize(true);
+    private void get_list_phim(String jSonString){
+        try{
+            listDangChieu = new ArrayList<>();
+            JSONArray jr=  new JSONArray(jSonString);
+            int len = jr.length();
+            for(int i= 0 ; i<len;i++){
+                JSONObject jb = (JSONObject) jr .getJSONObject(i);
+                Phim phim = new Phim();
+                phim.setIDPhim(Integer.parseInt(jb.getString("id")));
+                phim.setName(jb.getString("ten_phim"));
+                phim.setPoster(jb.getString("hinh_anh"));
+                phim.setDiem(Float.parseFloat(jb.getString("diem")));
+                phim.setTuoi(Integer.parseInt(jb.getString("tuoi")));
+                phim.setTheLoai(jb.getString("id_the_loai"));
+                phim.setThoiluong(jb.getString("thoi_luong"));
+                phim.setKhoichieu(jb.getString("khoi_chieu"));
+                phim.setTomtat(jb.getString("tom_tat"));
+                phim.setTrailer(jb.getString("trailer"));
+                phim.setTrangThai(Integer.parseInt(jb.getString("trang_thai")));
+                if(Integer.parseInt(jb.getString("trang_thai"))==1){
+                    listDangChieu.add(phim);
+                }
+            }
 
-        gridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(gridLayoutManager);
-//        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL , false);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-        DangChieuAdapter dangChieuAdapter = new DangChieuAdapter(listfive, getContext());
-        recyclerView.setAdapter(dangChieuAdapter);
-        showListSearch();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
-
-    public void showListSearch(){
+    public void initView(View view,ArrayList<Phim> listSapChieu){
+        initRecyclerView(listSapChieu);
+        showListSearch(listSapChieu);
+    }
+    public void showListSearch( ArrayList<Phim> listDangChieu){
         field = (SearchView)dangChieuRootView.findViewById(R.id.searchDangChieu);
         field.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -71,80 +95,26 @@ public class TabDangChieu extends Fragment {
             @Override
             public boolean onQueryTextChange(String getText) {
                 if(getText.isEmpty()) {
-                    recyclerView =(RecyclerView)getActivity().findViewById(R.id.recycler_dang_chieu);
-                    recyclerView.setHasFixedSize(true);
-
-                    gridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-                    recyclerView.setLayoutManager(gridLayoutManager);
-                    DangChieuAdapter dangChieuAdapter = new DangChieuAdapter(listfive, getContext());
-                    recyclerView.setAdapter(dangChieuAdapter);
+                    initRecyclerView(listDangChieu);
                 }
-                ArrayList<Phim> result = new ArrayList<>();
-                int len = listfive.size();
-                 for(int i=0;i<len;i++){
-                     if(listfive.get(i).getName().toLowerCase().contains(getText.toLowerCase()))
-                         result.add(listfive.get(i));
-                 }
+                ArrayList<Phim> resultSC = new ArrayList<>();
+                int len = listDangChieu.size();
+                for(int i=0;i<len;i++){
+                    if(listDangChieu.get(i).getName().toLowerCase().contains(getText.toLowerCase()))
+                        resultSC.add(listDangChieu.get(i));
+                }
 
-            recyclerView = (RecyclerView)getActivity().findViewById(R.id.recycler_dang_chieu);
-            recyclerView.setHasFixedSize(true);
-            gridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-            recyclerView.setLayoutManager(gridLayoutManager);
-            DangChieuAdapter dangChieuAdapter = new DangChieuAdapter( result , getContext());
-            recyclerView.setAdapter(dangChieuAdapter);
+                initRecyclerView(resultSC);
                 return false;
             }
         });
     }
-
-
-    //        field.addTextChangedListener(new TextWatcher() {
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable) {
-//            String getText = ((EditText)listMovieActivity.findViewById(R.id.search)).getText().toString();
-//            if(getText.isEmpty()) {
-//                recyclerView =(RecyclerView)listMovieActivity.findViewById(R.id.recycler_dang_chieu);
-//                recyclerView.setHasFixedSize(true);
-//
-//                gridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-//                recyclerView.setLayoutManager(gridLayoutManager);
-////        linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL , false);
-////        recyclerView.setLayoutManager(linearLayoutManager);
-//                DangChieuAdapter dangChieuAdapter = new DangChieuAdapter(listfive, getContext());
-//                recyclerView.setAdapter(dangChieuAdapter);
-//            }
-//            ArrayList<Phim> result = new ArrayList<>();
-//            int len = listfive.size();
-//            for(int j=0;j<len;j++){
-//                if(listfive.get(i).getName().toLowerCase().contains(getText.toLowerCase()))
-//                    result.add(listfive.get(i));
-//            }
-//
-//            recyclerView = (RecyclerView)getActivity().findViewById(R.id.recycler_dang_chieu);
-//            recyclerView.setHasFixedSize(true);
-//            gridLayoutManager = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-//            recyclerView.setLayoutManager(gridLayoutManager);
-//            DangChieuAdapter dangChieuAdapter = new DangChieuAdapter( result , getContext());
-//            recyclerView.setAdapter(dangChieuAdapter);
-//        }
-//    });
-//    FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            Intent intent=new Intent(context,NoteMag.class);
-//            startActivity(intent);
-//
-//        }
-//    });
+    public  void initRecyclerView(ArrayList<Phim> lst)
+    {
+        recyclerViewDangChieu.setHasFixedSize(true);
+        gridLayoutManagerDangChieu = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
+        recyclerViewDangChieu.setLayoutManager(gridLayoutManagerDangChieu);
+        TatCaAdapter sapChieuAdapter = new TatCaAdapter( lst , getContext());
+        recyclerViewDangChieu.setAdapter(sapChieuAdapter);
+    }
 }

@@ -11,22 +11,23 @@
         android:orientation="horizontal">
 
         <SearchView
-            android:id="@+id/searchDangChieu"
+            android:id="@+id/searchTatCa"
             android:layout_width="360dp"
             android:layout_height="wrap_content"
             android:iconifiedByDefault="false"
             android:queryHint="Phim"></SearchView>
 
 <!--        <ImageButton-->
-<!--            android:id="@+id/filterDangChieu"-->
+<!--            android:id="@+id/filterTatCa"-->
 <!--            android:layout_width="52dp"-->
 <!--            android:layout_height="match_parent"-->
 <!--            android:background="#FDFDFD"-->
+<!--            android:onClick="filter"-->
 <!--            android:src="@drawable/filter" />-->
 
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_dang_chieu"
+        android:id="@+id/recycler_tat_ca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

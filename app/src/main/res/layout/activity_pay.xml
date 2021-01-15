@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewRap"
+            android:id="@+id/txtChiNhanh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
@@ -79,10 +79,10 @@
             android:textColor="#CCCCCC"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewRap" />
+            app:layout_constraintTop_toBottomOf="@+id/txtChiNhanh" />
 
         <TextView
-            android:id="@+id/textViewPhgChieu"
+            android:id="@+id/txtRap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
@@ -103,7 +103,7 @@
             android:textColor="#CCCCCC"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPhgChieu" />
+            app:layout_constraintTop_toBottomOf="@+id/txtRap" />
 
         <TextView
             android:id="@+id/textViewGhe"
@@ -115,7 +115,7 @@
             android:textColor="#CCCCCC"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPhgChieu" />
+            app:layout_constraintTop_toBottomOf="@+id/txtRap" />
 
         <TextView
             android:id="@+id/textView8"

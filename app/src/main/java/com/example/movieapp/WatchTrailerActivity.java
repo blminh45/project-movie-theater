@@ -38,6 +38,9 @@ public class WatchTrailerActivity extends YouTubeBaseActivity implements YouTube
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        String trailer = intent.getStringExtra("Trailer");
+        Trailer_ID = trailer;
         fullScreen();
         setContentView(R.layout.activity_watch_trailer);
 

@@ -15,7 +15,8 @@ import android.widget.PopupMenu;
 import com.google.android.material.tabs.TabLayout;
 
 public class ListMovieActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
-    private ViewPager viewPagerDangChieu;
+    private ViewPager viewPager;
+   
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +24,10 @@ public class ListMovieActivity extends AppCompatActivity implements PopupMenu.On
         initView();
     }
     public void initView(){
-        viewPagerDangChieu = (ViewPager)findViewById(R.id.viewPagerListMovie);
-        viewPagerDangChieu.setAdapter(new ListMovieApdater(getSupportFragmentManager()));
+        viewPager = (ViewPager)findViewById(R.id.viewPagerListMovie);
+        viewPager.setAdapter(new ListMovieApdater(getSupportFragmentManager()));
         TabLayout tabLayoutDangChieu = (TabLayout)findViewById(R.id.tabListMovie);
-        tabLayoutDangChieu.setupWithViewPager(viewPagerDangChieu);
+        tabLayoutDangChieu.setupWithViewPager(viewPager);
     }
 
     public void Detail(View view) {
