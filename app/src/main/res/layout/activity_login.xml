@@ -92,7 +92,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:background="#000"
-                android:onClick="validateUser"
+                android:onClick="login"
                 android:text="Đăng nhập"
                 android:textColor="#fff"
                 android:textSize="18dp"
