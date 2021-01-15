@@ -21,7 +21,17 @@ public class KhachHangAPIGetting extends AsyncTask<KhachHang, String, String> {
 
     @Override
     protected String doInBackground(KhachHang... khachHangs) {
-        return APIKhachHang.getKhachHang();
+        //return APIKhachHang.getKhachHang();
+        if (khachHangs[0].getSdt().isEmpty())
+            return APIKhachHang.getKhachHang();
+        else {
+            try {
+                return APIKhachHang.addKhachHang(khachHangs[0]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
     @Override

@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                 khachHang.setEmail(jb.getString("email"));
                 khachHang.setNgaySinh(jb.getString("ngay_sinh"));
                 khachHang.setDiachi(jb.getString("dia_chi"));
+                khachHang.setAvatar(jb.getString("anh_dai_dien"));
                 lst_kh.add(khachHang);
             }
             return true;
@@ -244,23 +245,25 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void validateUser(View view) {
-        int sl=0;
         if (!validateUsername() | !validatePassword()) {
         }
         else{
             int len =lst.size();
             for (int i = 0; i < len; i++) {
-                if (lst.get(i).getSdt().equals(username.getEditText().getText().toString())
-                        &&lst.get(i).getMatkhau().equals(password.getEditText().getText().toString())) {
-                    sl++;
-                    intent = new Intent(LoginActivity.this,InforActivity.class);
-                    intent.putExtra("Ten",lst.get(i).getTen());
-                    intent.putExtra("Diachi",lst.get(i).getDiachi());
-                    intent.putExtra("SDT",lst.get(i).getSdt());
-                    intent.putExtra("Ngaysinh",lst.get(i).getNgaySinh());
-                    intent.putExtra("Matkhau",lst.get(i).getMatkhau());
-                    intent.putExtra("Email",lst.get(i).getEmail());
-                    startActivityForResult(intent,RC_SIGN_IN);
+                try {
+                    if (lst.get(i).getSdt().equals(username.getEditText().getText().toString())
+                            &&lst.get(i).getMatkhau().equals(convertHashToString(password.getEditText().getText().toString()))) {
+                        intent = new Intent(LoginActivity.this,InforActivity.class);
+                        intent.putExtra("Ten",lst.get(i).getTen());
+                        intent.putExtra("Diachi",lst.get(i).getDiachi());
+                        intent.putExtra("SDT",lst.get(i).getSdt());
+                        intent.putExtra("Ngaysinh",lst.get(i).getNgaySinh());
+                        intent.putExtra("Matkhau",lst.get(i).getMatkhau());
+                        intent.putExtra("Email",lst.get(i).getEmail());
+                        startActivityForResult(intent,RC_SIGN_IN);
+                    }
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
                 }
             }
         }
