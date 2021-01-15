@@ -28,6 +28,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONArray;
@@ -64,6 +65,13 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_fb);
         loginGg = findViewById(R.id.login_gg);
+        //Xử lý nếu đã đăng ký thành công,tự gán tk mk cho trang login
+        Intent intentSignUp = getIntent();
+        int countSignUp = intentSignUp.getIntExtra("count_signup",0);
+        if(countSignUp>0){
+            username.getEditText().setText(intentSignUp.getStringExtra("sdt"));
+            password.getEditText().setText(intentSignUp.getStringExtra("mk"));
+        }
         //login google
         loginGg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,13 +98,11 @@ public class LoginActivity extends AppCompatActivity {
                 GraphRequest graphRequest = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
                         new GraphRequest.GraphJSONObjectCallback() {
                             @Override
+                            //Lấy dữ liệu từ tài khoản fb
                             public void onCompleted(JSONObject object, GraphResponse response) {
                                 try {
                                     namefb = object.getString("name");
                                     idfb = object.getString("id");
-                                    //fullname.setText(namefb);
-                                    //Picasso.get().load("https://graph.facebook.com/" + idfb + "/picture?type=large").into(img);
-                                    //Glide.with(InforActivity.this).load("https://graph.facebook.com/" + idfb + "/picture?type=large").into(img);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
 
@@ -137,7 +143,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-
+    //Phương thức nhận list khách hàng
     private Boolean get_lst_kh(String jSonString) {
         try {
             lst_kh = new ArrayList();
@@ -213,7 +219,7 @@ public class LoginActivity extends AppCompatActivity {
             handleSignInResult(task);
         }
     }
-
+    //Ràng buộc dữ liệu nhập
     private Boolean validateUsername() {
         String val = username.getEditText().getText().toString();
         String noWhiteSpace = "\\A\\w{6,20}\\z";
@@ -243,14 +249,16 @@ public class LoginActivity extends AppCompatActivity {
             return true;
         }
     }
-
+    //Phương thức đăng nhập
     public void validateUser(View view) {
         if (!validateUsername() | !validatePassword()) {
         }
         else{
+            //Xét chuỗi khách hàng
             int len =lst.size();
             for (int i = 0; i < len; i++) {
                 try {
+                    //So sánh tk và mk có trùng với các dữ liệu vừa nhập hay chưa
                     if (lst.get(i).getSdt().equals(username.getEditText().getText().toString())
                             &&lst.get(i).getMatkhau().equals(convertHashToString(password.getEditText().getText().toString()))) {
                         intent = new Intent(LoginActivity.this,InforActivity.class);
@@ -260,6 +268,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("Ngaysinh",lst.get(i).getNgaySinh());
                         intent.putExtra("Matkhau",lst.get(i).getMatkhau());
                         intent.putExtra("Email",lst.get(i).getEmail());
+                        intent.putExtra("count_login",-1);
                         startActivityForResult(intent,RC_SIGN_IN);
                     }
                 } catch (NoSuchAlgorithmException e) {
@@ -289,7 +298,7 @@ public class LoginActivity extends AppCompatActivity {
             Log.w("Error", "signInResult:failed code=" + e.getStatusCode());
         }
     }
-
+    //Mã hóa
     private String convertHashToString(String text) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] hashInBytes = md.digest(text.getBytes(StandardCharsets.UTF_8));

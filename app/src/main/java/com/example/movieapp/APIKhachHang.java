@@ -12,6 +12,7 @@ public class APIKhachHang {
     static HttpURLConnection urlConnection = null;
     static String uri = "http://dashboard-movie-web.herokuapp.com/api/khach-hang";
     static String uriThemKH = "http://dashboard-movie-web.herokuapp.com/api/them-khach-hang";
+    //Lấy danh sách khách hàng
     static String getKhachHang(){
         BufferedReader reader = null;
         String result = null;
@@ -50,11 +51,12 @@ public class APIKhachHang {
         }
         return result;
     }
+    //Thêm khách hàng
     static String addKhachHang(KhachHang khachHang) throws IOException {
         BufferedReader reader = null;
         String result = null;
         String url = uriThemKH+"?ten="+khachHang.getTen()+"&dia_chi="+khachHang.getDiachi()+
-                "&so_dien_thoai="+khachHang.getSdt()+"&ngay_sinh"+khachHang.getNgaySinh()+"&email="+khachHang.getEmail()+
+                "&so_dien_thoai="+khachHang.getSdt()+"&ngay_sinh="+khachHang.getNgaySinh()+"&email="+khachHang.getEmail()+
                 "&anh_dai_dien="+khachHang.getAvatar()+"&mat_khau="+khachHang.getMatkhau();
         try {
             URL requestURL = new URL(url);

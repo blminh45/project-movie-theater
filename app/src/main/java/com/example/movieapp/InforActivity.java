@@ -58,6 +58,7 @@ public class InforActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infor);
         getFormWidgets();
+        //Xử lý ẩn các nút đăng xuất fb hoặc gg.
         Intent intent = getIntent();
         count_login = intent.getIntExtra("count_login",0);
         if(count_login>0) {
@@ -83,7 +84,7 @@ public class InforActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Xử lý lấy dữ liệu từ google và đổ vào view
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -97,8 +98,16 @@ public class InforActivity extends AppCompatActivity {
             fullname.setText(NameGG);
             Glide.with(this).load(String.valueOf(personPhoto)).into(img);
         }
+        //Xử lý đăng xuất
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logoutIntent = new Intent(InforActivity.this,LoginActivity.class);
+                startActivity(logoutIntent);
+            }
+        });
     }
-
+    //Đăng xuất facebook
     AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
         @Override
         protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
@@ -157,6 +166,7 @@ public class InforActivity extends AppCompatActivity {
         }
         else intent.putExtra("key",0);
         startActivity(intent);
+        finish();
     }
 
     public void OnMenu(View view) {
@@ -165,7 +175,7 @@ public class InforActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
 
-
+    //Phương thức đăng xuất fb
     private void signOut() {
         mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
