@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
     private List<String> listimg = new ArrayList<>();
     private RecyclerView mRecylerView;
     private MainAdapter mAdapter;
+
+    private RecyclerView mRecylerView2;
+    private MainAdapter mAdapter2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MainAdapter(listimg, this);
         mRecylerView.setAdapter(mAdapter);
         mRecylerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false));
+
+        mRecylerView2 = findViewById(R.id.recycler_main2);
+        mAdapter2 = new MainAdapter(listimg, this);
+        mRecylerView2.setAdapter(mAdapter2);
+        mRecylerView2.setLayoutManager(new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false));
     }
 
     public void createData(){
@@ -92,6 +100,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void ToUser(View view) {
         Intent intent=new Intent(this,InforActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
+
+    public void DangChieu(View view) {
+        Intent intent=new Intent(this,NowSlide.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
+    }
+
+    public void SapChieu(View view) {
+        Intent intent=new Intent(this,WillSlide.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
