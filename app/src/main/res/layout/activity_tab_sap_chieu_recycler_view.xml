@@ -17,13 +17,13 @@
             android:iconifiedByDefault="false"
             android:queryHint="Phim"></SearchView>
 
-        <ImageButton
-            android:id="@+id/filterSapChieu"
-            android:layout_width="52dp"
-            android:layout_height="match_parent"
-            android:background="#FDFDFD"
-            android:onClick="filter"
-            android:src="@drawable/filter" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/filterSapChieu"-->
+<!--            android:layout_width="52dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="#FDFDFD"-->
+<!--            android:onClick="filter"-->
+<!--            android:src="@drawable/filter" />-->
 
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

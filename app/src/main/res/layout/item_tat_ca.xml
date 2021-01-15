@@ -12,17 +12,16 @@
         android:layout_height="298dp">
 
         <ImageView
-            android:id="@+id/Poster"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+            android:id="@+id/Poster_tat_ca"
+            android:layout_width="300dp"
+            android:layout_height="600dp"
             tools:srcCompat="@drawable/p12" />
 
         <TextView
-            android:id="@+id/Tuoi"
+            android:id="@+id/Tuoi_tat_ca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/Diem"
+            android:layout_above="@id/Diem_tat_ca"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
@@ -32,10 +31,10 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/Diem"
+            android:id="@+id/Diem_tat_ca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/Poster"
+            android:layout_alignBottom="@id/Poster_tat_ca"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
@@ -53,7 +52,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/Name"
+            android:id="@+id/Name_tat_ca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -63,7 +62,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/TheLoai"
+            android:id="@+id/TheLoai_tat_ca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

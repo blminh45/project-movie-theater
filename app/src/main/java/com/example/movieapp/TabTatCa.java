@@ -1,15 +1,19 @@
 package com.example.movieapp;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -18,23 +22,23 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.ExecutionException;
 
-public class TabSapChieu extends Fragment {
-    private View sapChieuRootView;
-    ArrayList<Phim> listSapChieu = new ArrayList<>();
-    private RecyclerView recyclerViewSapChieu;
-    private StaggeredGridLayoutManager gridLayoutManagerSapChieu;
+public class TabTatCa extends Fragment {
+    private View tatCaRootView;
+    ArrayList<Phim> listTatCa = new ArrayList<>();
+    private RecyclerView recyclerViewTatCa;
+    private StaggeredGridLayoutManager gridLayoutManagerTatCa;
     private SearchView field;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        sapChieuRootView = inflater.inflate(R.layout.activity_tab_sap_chieu_recycler_view, container , false);
-        recyclerViewSapChieu =(RecyclerView)sapChieuRootView.findViewById(R.id.recycler_sap_chieu);
+        tatCaRootView = inflater.inflate(R.layout.activity_tab_tat_ca_phim_recycler, container , false);
         createData();
-
-        initView(sapChieuRootView,listSapChieu);
-        return sapChieuRootView;
+        initView(tatCaRootView);
+        return tatCaRootView;
     }
     public void createData(){
         String jSonString = null;
@@ -49,7 +53,7 @@ public class TabSapChieu extends Fragment {
     }
     private void get_list_phim(String jSonString){
         try{
-            listSapChieu = new ArrayList<>();
+            listTatCa = new ArrayList<>();
             JSONArray jr=  new JSONArray(jSonString);
             int len = jr.length();
             for(int i= 0 ; i<len;i++){
@@ -65,9 +69,10 @@ public class TabSapChieu extends Fragment {
                 phim.setKhoichieu(jb.getString("khoi_chieu"));
                 phim.setTomtat(jb.getString("tom_tat"));
                 phim.setTrailer(jb.getString("trailer"));
+                phim.setGia(Double.parseDouble(jb.getString("gia_phim")));
                 phim.setTrangThai(Integer.parseInt(jb.getString("trang_thai")));
-                if(Integer.parseInt(jb.getString("trang_thai"))==0) {
-                    listSapChieu.add(phim);
+                if(Integer.parseInt(jb.getString("trang_thai"))==1||Integer.parseInt(jb.getString("trang_thai"))==0){
+                    listTatCa.add(phim);
                 }
             }
 
@@ -75,12 +80,18 @@ public class TabSapChieu extends Fragment {
             e.printStackTrace();
         }
     }
-    public void initView(View view,ArrayList<Phim> listSapChieu){
-        initRecyclerView(listSapChieu);
-        showListSearch(listSapChieu);
+    public void initView(View view){
+        recyclerViewTatCa =(RecyclerView)view.findViewById(R.id.recycler_tat_ca);
+        recyclerViewTatCa.setHasFixedSize(true);
+
+        gridLayoutManagerTatCa = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
+        recyclerViewTatCa.setLayoutManager(gridLayoutManagerTatCa);
+        TatCaAdapter tatCaAdapter = new TatCaAdapter(listTatCa, getContext());
+        recyclerViewTatCa.setAdapter(tatCaAdapter);
+        showListSearch();
     }
-    public void showListSearch( ArrayList<Phim> listSapChieu){
-        field = (SearchView)sapChieuRootView.findViewById(R.id.searchSapChieu);
+    public void showListSearch(){
+        field = (SearchView)tatCaRootView.findViewById(R.id.searchTatCa);
         field.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -90,26 +101,29 @@ public class TabSapChieu extends Fragment {
             @Override
             public boolean onQueryTextChange(String getText) {
                 if(getText.isEmpty()) {
-                    initRecyclerView(listSapChieu);
+                    recyclerViewTatCa =(RecyclerView)getActivity().findViewById(R.id.recycler_tat_ca);
+                    recyclerViewTatCa.setHasFixedSize(true);
+
+                    gridLayoutManagerTatCa = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
+                    recyclerViewTatCa.setLayoutManager(gridLayoutManagerTatCa);
+                    TatCaAdapter tatCaAdapter = new TatCaAdapter( listTatCa , getContext());
+                    recyclerViewTatCa.setAdapter(tatCaAdapter);
                 }
-                ArrayList<Phim> resultSC = new ArrayList<>();
-                int len = listSapChieu.size();
+                ArrayList<Phim> result = new ArrayList<>();
+                int len = listTatCa.size();
                 for(int i=0;i<len;i++){
-                    if(listSapChieu.get(i).getName().toLowerCase().contains(getText.toLowerCase()))
-                        resultSC.add(listSapChieu.get(i));
+                    if(listTatCa.get(i).getName().toLowerCase().contains(getText.toLowerCase()))
+                        result.add(listTatCa.get(i));
                 }
 
-                initRecyclerView(resultSC);
+                recyclerViewTatCa = (RecyclerView)getActivity().findViewById(R.id.recycler_tat_ca);
+                recyclerViewTatCa.setHasFixedSize(true);
+                gridLayoutManagerTatCa = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
+                recyclerViewTatCa.setLayoutManager(gridLayoutManagerTatCa);
+                TatCaAdapter tatCaAdapter = new TatCaAdapter( result , getContext());
+                recyclerViewTatCa.setAdapter(tatCaAdapter);
                 return false;
             }
         });
-    }
-    public  void initRecyclerView(ArrayList<Phim> lst)
-    {
-        recyclerViewSapChieu.setHasFixedSize(true);
-        gridLayoutManagerSapChieu = new StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL);
-        recyclerViewSapChieu.setLayoutManager(gridLayoutManagerSapChieu);
-        TatCaAdapter sapChieuAdapter = new TatCaAdapter( lst , getContext());
-        recyclerViewSapChieu.setAdapter(sapChieuAdapter);
     }
 }

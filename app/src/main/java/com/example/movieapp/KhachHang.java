@@ -6,10 +6,28 @@ public class KhachHang {
     private String Sdt;
     private String Email;
     private String NgaySinh;
-    private Boolean GioiTinh;
     private String Avatar;
     private String Matkhau;
 
+    public KhachHang() {
+        this.Ten = "";
+        this.Diachi="";
+        this.Sdt="";
+        this.Email="";
+        this.NgaySinh="";
+        this.Avatar="";
+        this.Matkhau="";
+    }
+
+    public KhachHang(String ten, String diachi, String sdt, String ngaySinh, String email, String avatar, String matkhau) {
+        Ten = ten;
+        Diachi = diachi;
+        Sdt = sdt;
+        Email = email;
+        NgaySinh = ngaySinh;
+        Avatar = avatar;
+        Matkhau = matkhau;
+    }
     public String getNgaySinh() {
         return NgaySinh;
     }
@@ -48,14 +66,6 @@ public class KhachHang {
 
     public void setEmail(String email) {
         Email = email;
-    }
-
-    public Boolean getGioiTinh() {
-        return GioiTinh;
-    }
-
-    public void setGioiTinh(Boolean gioiTinh) {
-        GioiTinh = gioiTinh;
     }
 
     public String getAvatar() {
