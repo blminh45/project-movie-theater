@@ -69,24 +69,16 @@ public class TatCaAdapter extends RecyclerView.Adapter<TatCaAdapter.ViewHolder>{
         @Override
         public void onClick(View v) {
             int position = getLayoutPosition();
-            String name = phim.get(position).getName();
-            String poster = phim.get(position).getPoster();
-            String theloai = phim.get(position).getTheLoai();
-            float diem = phim.get(position).getDiem();
-            int tuoi = phim.get(position).getTuoi();
-            String trailer = phim.get(position).getTrailer();
-
-//            Toast.makeText(context, "Phim:"+ name.toString() +"-"+poster+"-"+theloai.toString()+"-"+Float.toString(diem)+"-"+Integer.toString(tuoi),
-//                    Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(context, DetailMovieActivity.class);
-            intent.putExtra("MovieName", name);
-            intent.putExtra("MoviePoster", poster);
-            intent.putExtra("MovieTheLoai", theloai);
-            intent.putExtra("MovieDiem", Float.toString(diem));
-            intent.putExtra("MovieTuoi", Integer.toString(tuoi));
-            intent.putExtra("MovieTrailer", "Q6iK6DjV_iE");
-
-            context.startActivity(intent);
+            Phim PhimClick = phim.get(position);
+            if(PhimClick.getTrangThai()==0){
+                Toast.makeText(context , "Phim chưa công chiếu", Toast.LENGTH_SHORT).show();
+            }
+            else{
+//                Toast.makeText(context , Double.toString(phim.get(position).getGia()), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, DetailMovieActivity.class);
+                intent.putExtra("PhimClick", PhimClick);
+                context.startActivity(intent);
+            }
         }
     }
 }

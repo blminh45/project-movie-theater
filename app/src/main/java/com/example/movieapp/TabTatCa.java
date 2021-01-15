@@ -4,8 +4,10 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -39,12 +41,6 @@ public class TabTatCa extends Fragment {
         return tatCaRootView;
     }
     public void createData(){
-//        listTatCa.clear();
-//        listTatCa.add(new Phim(R.drawable.p12, "Đứa con thời tiết tất cả" , "Tình cảm" , 9 , 18));
-//        listTatCa.add(new Phim(R.drawable.p1, "Cục nợ hóa cục cưng" , "Tình cảm" , 8 , 18));
-//        listTatCa.add(new Phim(R.drawable.p2, "Lật mặt 48H" , "Hành động" , 7 , 18));
-//        listTatCa.add(new Phim(R.drawable.p3, "Em là của em" , "Tình cảm" , 6 , 18));
-//        listTatCa.add(new Phim(R.drawable.p4, "Chị Mười Ba" , "Hành động" , 8 , 18));
         String jSonString = null;
         try{
             jSonString = new APIGetting(getActivity()).execute(new Phim()).get();
@@ -53,9 +49,9 @@ public class TabTatCa extends Fragment {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        get_list_word(jSonString);
+        get_list_phim(jSonString);
     }
-    private void get_list_word(String jSonString){
+    private void get_list_phim(String jSonString){
         try{
             listTatCa = new ArrayList<>();
             JSONArray jr=  new JSONArray(jSonString);
@@ -65,9 +61,14 @@ public class TabTatCa extends Fragment {
                 Phim phim = new Phim();
                 phim.setName(jb.getString("ten_phim"));
                 phim.setPoster(jb.getString("hinh_anh"));
-                phim.setDiem(9);
-                phim.setTuoi(18);
+                phim.setDiem(Float.parseFloat(jb.getString("diem")));
+                phim.setTuoi(Integer.parseInt(jb.getString("tuoi")));
                 phim.setTheLoai(jb.getString("id_the_loai"));
+                phim.setThoiluong(jb.getString("thoi_luong"));
+                phim.setKhoichieu(jb.getString("khoi_chieu"));
+                phim.setTomtat(jb.getString("tom_tat"));
+                phim.setTrailer(jb.getString("trailer"));
+                phim.setGia(Double.parseDouble(jb.getString("gia_phim")));
                 listTatCa.add(phim);
             }
 

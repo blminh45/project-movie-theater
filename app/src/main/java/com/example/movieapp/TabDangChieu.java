@@ -50,9 +50,9 @@ public class TabDangChieu extends Fragment {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        get_list_word(jSonString);
+        get_list_phim(jSonString);
     }
-    private void get_list_word(String jSonString){
+    private void get_list_phim(String jSonString){
         try{
             listDangChieu = new ArrayList<>();
             JSONArray jr=  new JSONArray(jSonString);
@@ -62,10 +62,16 @@ public class TabDangChieu extends Fragment {
                 Phim phim = new Phim();
                 phim.setName(jb.getString("ten_phim"));
                 phim.setPoster(jb.getString("hinh_anh"));
-                phim.setDiem(9);
-                phim.setTuoi(18);
+                phim.setDiem(Float.parseFloat(jb.getString("diem")));
+                phim.setTuoi(Integer.parseInt(jb.getString("tuoi")));
                 phim.setTheLoai(jb.getString("id_the_loai"));
-                listDangChieu.add(phim);
+                phim.setThoiluong(jb.getString("thoi_luong"));
+                phim.setKhoichieu(jb.getString("khoi_chieu"));
+                phim.setTomtat(jb.getString("tom_tat"));
+                phim.setTrailer(jb.getString("trailer"));
+                if(Integer.parseInt(jb.getString("trang_thai"))==1){
+                    listDangChieu.add(phim);
+                }
             }
 
         } catch (JSONException e) {

@@ -2,13 +2,10 @@ package com.example.movieapp;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
-import java.io.IOException;
-
-public class APIGetting extends AsyncTask<Phim, String, String> {
+public class GheAPIGetting extends AsyncTask<Ghe, String, String> {
     private Context m_con;
-    public  APIGetting(Context con)
+    public  GheAPIGetting(Context con)
     {
         m_con =con;
     }
@@ -20,8 +17,8 @@ public class APIGetting extends AsyncTask<Phim, String, String> {
     }
 
     @Override
-    protected String doInBackground(Phim... phim) {
-            return APIPhim.getPhim();
+    protected String doInBackground(Ghe... ghe) {
+        return APIGhe.getGhe();
     }
 
     @Override
@@ -35,4 +32,3 @@ public class APIGetting extends AsyncTask<Phim, String, String> {
 //        Toast.makeText(m_con , "Finish ", Toast.LENGTH_SHORT).show();
     }
 }
-

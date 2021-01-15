@@ -24,10 +24,10 @@ public class ListMovieApdater extends FragmentStatePagerAdapter {
         if(position == 0){
             return tabTatCa;
         }
-        if(position == 1){
+        else if(position == 1){
             return tabDangChieu;
         }
-        if(position == 2){
+        else if(position == 2){
             return tabSapChieu;
         }
         return null;

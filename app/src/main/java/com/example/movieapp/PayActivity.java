@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class PayActivity extends AppCompatActivity {
 
     @Override
@@ -30,27 +32,35 @@ public class PayActivity extends AppCompatActivity {
     TextView txtTime;
     TextView txtGhe;
     TextView txtNgay;
+    TextView txtChiNhanh;
+    TextView txtTongTien;
 
 
     private void setDetail(){
         Intent intent = getIntent();
         String name = intent.getStringExtra("MovieName");
-//        String poster = intent.getStringExtra("MoviePoster");
+        String poster = intent.getStringExtra("MoviePoster");
         String rap = intent.getStringExtra("MovieRap");
         String time = intent.getStringExtra("MovieTime");
         String ghe = intent.getStringExtra("MovieGhe");
         String ngay = intent.getStringExtra("MovieNgay");
+        String chinhanh = intent.getStringExtra("MovieChiNhanh");
+        String GiaVe = intent.getStringExtra("TongTien");
 //        int number = Integer.parseInt(poster);
         txtName =(TextView)findViewById(R.id.movieDate);
-        txtRap =(TextView)findViewById(R.id.textViewRap);
+        txtRap =(TextView)findViewById(R.id.txtRap);
+        txtChiNhanh =findViewById(R.id.txtChiNhanh);
         txtTime=(TextView)findViewById(R.id.textViewSuatChieu);
         txtGhe=(TextView)findViewById(R.id.textViewGhe);
         anhDaiDien=(ImageView)findViewById(R.id.imageView);
+        txtTongTien=(TextView)findViewById(R.id.textViewTongTien);
 
+        txtChiNhanh.setText(chinhanh);
         txtName.setText(name);
         txtRap.setText(rap);
         txtTime.setText(time+" - "+ ngay);
         txtGhe.setText(ghe);
-//        anhDaiDien.setImageResource(number);
+        txtTongTien.setText(GiaVe);
+        Picasso.get().load("http://dashboard-movie-web.herokuapp.com/images/"+poster).into(anhDaiDien);
     }
 }
