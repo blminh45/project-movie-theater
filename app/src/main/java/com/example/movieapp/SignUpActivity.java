@@ -25,6 +25,9 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 
@@ -163,12 +166,16 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
     public void registerUser(View view) {
-        String ten,diachi,sdt,email,matkhau,ngaysinh,anhdaidien;
+        String ten,diachi,sdt,email,matkhau = null,ngaysinh,anhdaidien;
         ten = regName.getEditText().getText().toString();
         diachi = regAddress.getEditText().getText().toString();
         sdt = regPhone.getEditText().getText().toString();
         email = regEmail.getEditText().getText().toString();
-        matkhau = regPassword.getEditText().getText().toString();
+        try {
+            matkhau = convertHashToString(regPassword.getEditText().getText().toString());
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         ngaysinh=regBirth.getText().toString();
         anhdaidien="img.png";
         if(!validateName() | !validateAddress() | !validateEmail() | !validatePassword() | !validatePhone() | !validateBirth()){
@@ -231,5 +238,14 @@ public class SignUpActivity extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUpActivity.this,pairs);
         startActivity(intent,options.toBundle());
         finish();
+    }
+    private String convertHashToString(String text) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        byte[] hashInBytes = md.digest(text.getBytes(StandardCharsets.UTF_8));
+        StringBuilder sb = new StringBuilder();
+        for (byte b : hashInBytes) {
+            sb.append(String.format("%02x", b));
+        }
+        return sb.toString();
     }
 }

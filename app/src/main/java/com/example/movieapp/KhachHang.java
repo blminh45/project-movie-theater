@@ -28,7 +28,6 @@ public class KhachHang {
         Avatar = avatar;
         Matkhau = matkhau;
     }
-
     public String getNgaySinh() {
         return NgaySinh;
     }
