@@ -250,7 +250,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
     //Phương thức đăng nhập
-    public void login(View view) {
+    public void validateUser(View view) {
         if (!validateUsername() | !validatePassword()) {
         }
         else{
