@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,25 +39,25 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Arrays;
 
 public class InforActivity extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
+    private static final int  IMAGE_PICK_CODE = 1000;
     ImageView img;
-    TextView fullname,email;
+    TextView fullname,mTextEmail , mTextSDT;
     Button logout;
     LoginButton logoutfb;
+    String Name,SDT,DiaChi,Email,NgaySinh,Pass;
     private int count_login;
     private String NameGG,EmailGG;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infor);
-        img = findViewById(R.id.img);
-        fullname=findViewById(R.id.fullname);
-        email = findViewById(R.id.email);
-        logout = findViewById(R.id.logout);
-        logoutfb = findViewById(R.id.login_fb);
+        getFormWidgets();
         Intent intent = getIntent();
         count_login = intent.getIntExtra("count_login",0);
         if(count_login>0) {
@@ -113,14 +115,47 @@ public class InforActivity extends AppCompatActivity {
         }
     };
 
+    public void getFormWidgets()
+    {
+        Intent intent = getIntent();
+        Name =intent.getStringExtra("Ten");
+        DiaChi =intent.getStringExtra("Diachi");
+        SDT = intent.getStringExtra("SDT");
+        NgaySinh = intent.getStringExtra("Ngaysinh");
+        Email = intent.getStringExtra("Email");
+        Pass = intent.getStringExtra("Matkhau");
+
+        img = findViewById(R.id.img);
+        fullname=findViewById(R.id.fullname);
+        mTextEmail = findViewById(R.id.email);
+        mTextSDT = findViewById(R.id.phone);
+        logout = findViewById(R.id.logout);
+        logoutfb = findViewById(R.id.login_fb);
+
+
+        fullname.setText(Name);
+        mTextEmail.setText(Email);
+        mTextSDT.setText(SDT);
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         accessTokenTracker.stopTracking();
     }
 
-    public void Click(View view) {
+    public void ClickProfile(View view) {
         Intent intent = new Intent(this,ProfileActivity.class);
+        if(Name != null) {
+            intent.putExtra("Ten", Name);
+            intent.putExtra("Diachi", DiaChi);
+            intent.putExtra("SDT", SDT);
+            intent.putExtra("Ngaysinh", NgaySinh);
+            intent.putExtra("Email", Email);
+            intent.putExtra("Pass", Pass);
+            intent.putExtra("key",1);
+        }
+        else intent.putExtra("key",0);
         startActivity(intent);
     }
 
@@ -135,7 +170,7 @@ public class InforActivity extends AppCompatActivity {
         mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
-                    public void onComplete(@NonNull Task<Void> task) {
+                    public void onComplete(@NonNull Task<   Void> task) {
                         img.setImageResource(0);
                         fullname.setText("");
                         count_login=0;
@@ -143,5 +178,35 @@ public class InforActivity extends AppCompatActivity {
                         finish();
                     }
                 });
+    }
+
+    public void ChooseImage(View view) {
+        pickImageFromGallery();
+    }
+
+    private void pickImageFromGallery() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent,IMAGE_PICK_CODE);
+    }
+    //handle result of picked image
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
+            //mImageView.setImageURI(data.getData());
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(data.getData());
+                Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
+                img.setImageBitmap(bitmap);
+            } catch (FileNotFoundException exception) {
+                exception.printStackTrace();
+            }
+        }
+    }
+
+    public void Back(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }

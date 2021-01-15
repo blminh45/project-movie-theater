@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/TenPhim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kimi no na wa"/>
+            <TextView
+                android:id="@+id/ThoiLuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="120 phút"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/TenRap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RapA"/>
+            <TextView
+                android:id="@+id/Ghe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ghế - A1"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/NgayChieu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16/1/2021"/>
+            <TextView
+                android:id="@+id/GioChieu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13:00"/>
+        </TableRow>
+        <TextView
+            android:id="@+id/DiaChi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quận 1"/>
+    </TableLayout>
+</LinearLayout>
