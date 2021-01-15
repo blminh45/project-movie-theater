@@ -114,14 +114,14 @@
                         android:id="@+id/thoiluong_dt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="55dp"
+                        android:layout_marginStart="45dp"
                         android:layout_marginBottom="76dp"
                         android:background="#FFEB3B"
                         android:text="118 Phút"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintStart_toEndOf="@+id/textView" />
 
                     <TextView
                         android:id="@+id/movieName"
@@ -167,14 +167,14 @@
                         android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="42dp"
+                        android:layout_marginStart="140dp"
                         android:layout_marginBottom="76dp"
                         android:background="#00BCD4"
                         android:text=" Thời lượng : "
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/thoiluong_dt" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/textView22"

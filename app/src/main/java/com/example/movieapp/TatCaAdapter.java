@@ -41,9 +41,7 @@ public class TatCaAdapter extends RecyclerView.Adapter<TatCaAdapter.ViewHolder>{
         holder.theloai.setText(phim.get(position).getTheLoai());
         holder.tuoi.setText(" "+ Integer.toString(phim.get(position).getTuoi())+"+ ");
         holder.diem.setText(" "+Float.toString(phim.get(position).getDiem())+"/10 ");
-
     }
-
     @Override
     public int getItemCount() {
         return phim.size();

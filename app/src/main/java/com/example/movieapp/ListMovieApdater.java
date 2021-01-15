@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class ListMovieApdater extends FragmentStatePagerAdapter {
-    private String listTab[] = {"Tất cả","Đang chiếu" , "Sắp chiếu"};
+    private String listTab[] = {"Đang chiếu" , "Sắp chiếu" ,  "Tất cả"};
     private TabTatCa tabTatCa;
     private TabDangChieu tabDangChieu;
     private TabSapChieu tabSapChieu;
@@ -22,13 +22,14 @@ public class ListMovieApdater extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == 0){
-            return tabTatCa;
-        }
-        else if(position == 1){
+
             return tabDangChieu;
         }
-        else if(position == 2){
+        else if(position == 1){
             return tabSapChieu;
+        }
+        else if(position == 2){
+            return tabTatCa;
         }
         return null;
     }

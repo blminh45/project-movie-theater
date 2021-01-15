@@ -3,30 +3,31 @@ package com.example.movieapp;
 import java.io.Serializable;
 
 public class ChiNhanh implements Serializable {
+    private int IDChiNhanh;
     private String TenChiNhanh;
     private String DiaChi;
     private String TrangThai;
-    private  String Rap;
 
-    public ChiNhanh(String tenChiNhanh, String diaChi, String trangThai ,  String rap) {
+    public ChiNhanh(int id ,String tenChiNhanh, String diaChi, String trangThai) {
+        IDChiNhanh = id;
         TenChiNhanh = tenChiNhanh;
         DiaChi = diaChi;
         TrangThai = trangThai;
-        Rap = rap;
+
     }
     public ChiNhanh() {
+        IDChiNhanh =0;
         TenChiNhanh = "";
         DiaChi = "";
         TrangThai = "";
-        Rap = "";
     }
 
-    public String getRap() {
-        return Rap;
+    public int getIDChiNhanh() {
+        return IDChiNhanh;
     }
 
-    public void setRap(String rap) {
-        Rap = rap;
+    public void setIDChiNhanh(int IDChiNhanh) {
+        this.IDChiNhanh = IDChiNhanh;
     }
 
     public String getTenChiNhanh() {

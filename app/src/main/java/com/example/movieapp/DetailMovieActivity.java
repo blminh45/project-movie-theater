@@ -32,6 +32,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     private double GiaGhe= 0;
     private double GiaPhim=0;
     private Ghe gheNhan = new Ghe() ;
+    public static Phim phimTruyen = new Phim();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class DetailMovieActivity extends AppCompatActivity {
 
     private void setDetail(){
         Intent intent = getIntent();
-
+        phimTruyen = (Phim) intent.getSerializableExtra("PhimClick");
         Phim phim = (Phim) intent.getSerializableExtra("PhimClick");
         movieName =(TextView)findViewById(R.id.movieName);
         movieTuoi =(TextView)findViewById(R.id.movieTuoi);
@@ -91,13 +92,15 @@ public class DetailMovieActivity extends AppCompatActivity {
         Intent intentphim = getIntent();
         Phim phim = (Phim) intentphim.getSerializableExtra("PhimClick");
 
-        TextView txtName = (TextView)findViewById(R.id.movieName) ;
-        TextView txtTime = (TextView)findViewById(R.id.actived_time) ;
-        TextView txtNgay = (TextView)findViewById(R.id.movieDate);
-        TextView txtGhe = (TextView)findViewById(R.id.actived_chair);
-        Spinner Snrap = (Spinner) findViewById(R.id.Rap);
+        TextView txtName = findViewById(R.id.movieName) ;
+        TextView txtTime = findViewById(R.id.actived_time) ;
+        TextView txtNgay = findViewById(R.id.movieDate);
+        TextView txtGhe = findViewById(R.id.actived_chair);
+
+        Spinner Snrap = findViewById(R.id.Rap);
         String rap = Snrap.getSelectedItem().toString();
-        Spinner Snchinhanh = (Spinner) findViewById(R.id.ThanhPho);
+
+        Spinner Snchinhanh =  findViewById(R.id.ThanhPho);
         String chinhanh = Snchinhanh.getSelectedItem().toString();
 
         String iTime = txtTime.getText().toString();
@@ -105,13 +108,13 @@ public class DetailMovieActivity extends AppCompatActivity {
         String iNgay = txtNgay.getText().toString();
         String name = txtName.getText().toString();
         if(iTime.equals(" 09:00 ")|| iTime.equals(" 12:00 ")){
-            GiaGio = 20.0;
-        }
-        if(iTime.equals(" 15:00 ")|| iTime.equals(" 18:00 ")){
             GiaGio = 30.0;
         }
-        if(iTime.equals(" 21:00 ")){
+        if(iTime.equals(" 15:00 ")|| iTime.equals(" 18:00 ")){
             GiaGio = 40.0;
+        }
+        if(iTime.equals(" 21:00 ")){
+            GiaGio = 50.0;
         }
 
         if(iTime.equals("")||iTime.equals(null)){
@@ -124,18 +127,42 @@ public class DetailMovieActivity extends AppCompatActivity {
             Toast.makeText(this, "Vui lòng chọn lại ghế", Toast.LENGTH_SHORT).show();
         }
         else{
+
+            Ve ve = new Ve();
             Intent intent = new Intent(this, PayActivity.class);
+
+            intent.putExtra("MovieID", phim.getIDPhim());
             intent.putExtra("MovieName", name);
             intent.putExtra("MoviePoster", phim.getPoster());
-            intent.putExtra("MovieRap", rap);
-            intent.putExtra("MovieChiNhanh" , chinhanh);
+
+            String[] itemrap = rap.split("-");
+            String[] itemchinhanh = chinhanh.split("-");
+
+            intent.putExtra("IDRap", itemrap[0]);
+            intent.putExtra("MovieRap", itemrap[1]);
+
+            intent.putExtra("IDChiNhanh", itemchinhanh[0]);
+            intent.putExtra("MovieChiNhanh" , itemchinhanh[1]);
+
             intent.putExtra("MovieTime", iTime);
-            intent.putExtra("MovieGhe", iGhe);
             intent.putExtra("MovieNgay", iNgay);
+
+            intent.putExtra("IDGhe", gheNhan.getIDGhe());
+            intent.putExtra("MovieGhe", iGhe);
+
+            Toast.makeText(this, "Ghe: "+gheNhan.getIDGhe()+"-IDPhim:"+phim.getIDPhim()+"-IDRap:"+itemrap[0]+"-TenRap:"+itemrap[1]+"-IDChiNhanh:"+itemchinhanh[0]+"-TenChiNhanh:"+itemchinhanh[1], Toast.LENGTH_SHORT).show();
+
 
             GiaPhim =phim.getGia();
             GiaGhe = gheNhan.getGiaGhe();
             double TongTien  = GiaGhe + GiaPhim + GiaGio;
+
+//            ve.setIDPhim(phim.getIDPhim());
+//            ve.setIDGhe(gheNhan.getIDGhe());
+//            ve.setGiaVe(TongTien);
+//            ve.setIDLichChieu();
+//            ve.setTrangThai(1);
+//            intent.putExtra("Ve", ve);
 
             intent.putExtra("TongTien", Double.toString(TongTien));
 //            intent.putExtra("MovieMoney", phim.getGia());
@@ -184,6 +211,7 @@ public class DetailMovieActivity extends AppCompatActivity {
                 gheNhan.setCot(Integer.parseInt(items[1]));
                 gheNhan.setGiaGhe(Double.parseDouble(items[2]));
                 gheNhan.setTrangThai(Integer.parseInt(items[3]));
+                gheNhan.setIDGhe(Integer.parseInt(items[4]));
 
                     txtGhe.setText(" "+items[0]+items[1]+" ");
             }

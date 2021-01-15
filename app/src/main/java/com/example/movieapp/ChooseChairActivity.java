@@ -62,6 +62,7 @@ public class ChooseChairActivity extends AppCompatActivity {
             for(int i= 0 ; i<len;i++){
                 JSONObject jb = (JSONObject) jr .getJSONObject(i);
                 Ghe ghe = new Ghe();
+                ghe.setIDGhe(Integer.parseInt(jb.getString("id")));
                 ghe.setHang(jb.getString("hang"));
                 ghe.setCot(Integer.parseInt(jb.getString("cot")));
                 ghe.setTrangThai(Integer.parseInt(jb.getString("trang_thai")));
@@ -135,7 +136,7 @@ public class ChooseChairActivity extends AppCompatActivity {
 
     public void Chon(View view) {
 
-        String intentGhe = gheClick.getHang()+"-"+gheClick.getCot()+"-"+gheClick.getGiaGhe()+"-"+gheClick.getTrangThai();
+        String intentGhe = gheClick.getHang()+"-"+gheClick.getCot()+"-"+gheClick.getGiaGhe()+"-"+gheClick.getTrangThai()+"-"+gheClick.getIDGhe();
         String reply = mReply;
         if(!reply.equals("")){
             Intent replyIntent = new Intent();

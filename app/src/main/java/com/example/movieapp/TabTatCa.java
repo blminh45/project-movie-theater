@@ -59,6 +59,7 @@ public class TabTatCa extends Fragment {
             for(int i= 0 ; i<len;i++){
                 JSONObject jb = (JSONObject) jr .getJSONObject(i);
                 Phim phim = new Phim();
+                phim.setIDPhim(Integer.parseInt(jb.getString("id")));
                 phim.setName(jb.getString("ten_phim"));
                 phim.setPoster(jb.getString("hinh_anh"));
                 phim.setDiem(Float.parseFloat(jb.getString("diem")));
@@ -69,7 +70,10 @@ public class TabTatCa extends Fragment {
                 phim.setTomtat(jb.getString("tom_tat"));
                 phim.setTrailer(jb.getString("trailer"));
                 phim.setGia(Double.parseDouble(jb.getString("gia_phim")));
-                listTatCa.add(phim);
+                phim.setTrangThai(Integer.parseInt(jb.getString("trang_thai")));
+                if(Integer.parseInt(jb.getString("trang_thai"))==1||Integer.parseInt(jb.getString("trang_thai"))==0){
+                    listTatCa.add(phim);
+                }
             }
 
         } catch (JSONException e) {

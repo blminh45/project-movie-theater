@@ -38,6 +38,11 @@ public class PayActivity extends AppCompatActivity {
 
     private void setDetail(){
         Intent intent = getIntent();
+        String idMovie = intent.getStringExtra("MovieID");
+        String idGhe = intent.getStringExtra("IDGhe");
+        String idChiNhanh = intent.getStringExtra("IDChiNhanh");
+        String idRap = intent.getStringExtra("IDRap");
+
         String name = intent.getStringExtra("MovieName");
         String poster = intent.getStringExtra("MoviePoster");
         String rap = intent.getStringExtra("MovieRap");

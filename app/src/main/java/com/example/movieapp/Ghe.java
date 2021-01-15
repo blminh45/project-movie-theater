@@ -7,12 +7,14 @@ public class Ghe implements Serializable {
     private  int Cot;
     private double GiaGhe;
     private int TrangThai;
+    private int IDGhe;
 
-    public Ghe(String hang, int cot, double giaGhe, int trangThai) {
+    public Ghe(String hang, int cot, double giaGhe, int trangThai, int idghe) {
         Hang = hang;
         Cot = cot;
         GiaGhe = giaGhe;
         TrangThai = trangThai;
+        IDGhe = idghe;
     }
 
     public Ghe() {
@@ -20,6 +22,15 @@ public class Ghe implements Serializable {
         Cot = 1;
         GiaGhe = 0;
         TrangThai = 1;
+        IDGhe = 0;
+    }
+
+    public int getIDGhe() {
+        return IDGhe;
+    }
+
+    public void setIDGhe(int IDGhe) {
+        this.IDGhe = IDGhe;
     }
 
     public String getHang() {

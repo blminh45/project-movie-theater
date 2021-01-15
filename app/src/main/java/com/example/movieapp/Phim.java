@@ -3,6 +3,7 @@ package com.example.movieapp;
 import java.io.Serializable;
 
 public class Phim implements Serializable {
+    private int IDPhim;
     private String Poster;
     private String Name;
     private String TheLoai;
@@ -17,7 +18,8 @@ public class Phim implements Serializable {
 
 
 
-    public Phim(String poster, String name, String theLoai, float diem, int tuoi, String trailer, String thoiluong, String khoichieu, String tomtat, double gia, int trangthai) {
+    public Phim(int IDPhim, String poster, String name, String theLoai, float diem, int tuoi, String trailer, String thoiluong, String khoichieu, String tomtat, double gia, int trangthai) {
+        this.IDPhim =IDPhim;
         Poster = poster;
         Name = name;
         TheLoai = theLoai;
@@ -32,6 +34,7 @@ public class Phim implements Serializable {
     }
 
     public Phim() {
+        IDPhim =0;
         Poster = "";
         Name = "";
         TheLoai = "";
@@ -42,7 +45,14 @@ public class Phim implements Serializable {
         Khoichieu = "";
         Tomtat = "";
         Gia = 0;
-        TrangThai = 1;
+    }
+
+    public int getIDPhim() {
+        return IDPhim;
+    }
+
+    public void setIDPhim(int IDPhim) {
+        this.IDPhim = IDPhim;
     }
 
     public int getTrangThai() {

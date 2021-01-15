@@ -18,6 +18,8 @@ public class TabThongTin extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         thongTinRootView = inflater.inflate(R.layout.activity_tab_thong_tin, container , false);
         Tomtat = thongTinRootView.findViewById(R.id.txtTomtat);
+        String tomtat = DetailMovieActivity.phimTruyen.getTomtat();
+        Tomtat.setText(tomtat);
         return thongTinRootView;
     }
 }

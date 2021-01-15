@@ -13,18 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cee0153-80fc-4444-9704-c7bc21d98422" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIChiNhanh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIGhe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChiNhanh.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChiNhanhAPIGetting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ghe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/GheAPIGetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIRap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/MainAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Rap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/RapAPIGetting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ve.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_trang_chu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIGetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIGetting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChiNhanh.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChiNhanh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ghe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ghe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieApdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieApdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/PayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/PayActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Phim.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Phim.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabDangChieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabDangChieu.java" afterDir="false" />
@@ -33,15 +35,8 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabTatCa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabTatCa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabThongTin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabThongTin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TatCaAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TatCaAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_chair.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_choose_chair.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_movie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_movie.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pay.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_dang_chieu_recycler_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_dang_chieu_recycler_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_lich_chieu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_lich_chieu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_sap_chieu_recycler_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_sap_chieu_recycler_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_tat_ca_phim_recycler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_tat_ca_phim_recycler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_thong_tin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tab_thong_tin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_filter.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/popup_menu_filter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +87,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/.." value="master" />
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="fix_detail" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +104,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.0.0/2151d26c3b241f0a887f2dadb9ab091649fcf020/recyclerview-1.0.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/project-movie-theater" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/0306181257_NguyenHoaiPhu_Bai2" />
     <property name="multi-representation-previewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.0.0/2151d26c3b241f0a887f2dadb9ab091649fcf020/recyclerview-1.0.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -231,18 +226,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="496" y="56" key="#app/0.0.1536.824@0.0.1536.824" timestamp="1604484025784" />
-    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1610685872556">
+    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1610703523677">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610685872556" />
+    <state x="863" y="156" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610703523677" />
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1606316470050">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1606316470050" />
-    <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1608715526185">
+    <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610691775596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1608715526185" />
+    <state x="551" y="281" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1610691775596" />
     <state x="361" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606312748975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -259,46 +254,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="167" key="AndroidCreateResourceDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1606837613483" />
-    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1609740346527">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog" timestamp="1610699035857">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1609740346527" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610623337273">
+    <state x="349" y="167" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1610699035857" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610699200524">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610623337273" />
-    <state width="1149" height="257" key="GridCell.Tab.0.bottom" timestamp="1610686974373">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610699200524" />
+    <state width="1491" height="253" key="GridCell.Tab.0.bottom" timestamp="1610707803652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610686974373" />
-    <state width="1149" height="257" key="GridCell.Tab.0.center" timestamp="1610686974372">
+    <state width="1491" height="253" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610707803652" />
+    <state width="1491" height="253" key="GridCell.Tab.0.center" timestamp="1610707803652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610686974372" />
-    <state width="1149" height="257" key="GridCell.Tab.0.left" timestamp="1610686974372">
+    <state width="1491" height="253" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610707803652" />
+    <state width="1491" height="253" key="GridCell.Tab.0.left" timestamp="1610707803652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610686974372" />
-    <state width="1149" height="257" key="GridCell.Tab.0.right" timestamp="1610686974372">
+    <state width="1491" height="253" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610707803652" />
+    <state width="1491" height="253" key="GridCell.Tab.0.right" timestamp="1610707803652">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610686974372" />
-    <state width="1149" height="257" key="GridCell.Tab.1.bottom" timestamp="1610686974373">
+    <state width="1491" height="253" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610707803652" />
+    <state width="1491" height="253" key="GridCell.Tab.1.bottom" timestamp="1610707803653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610686974373" />
-    <state width="1149" height="257" key="GridCell.Tab.1.center" timestamp="1610686974373">
+    <state width="1491" height="253" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610707803653" />
+    <state width="1491" height="253" key="GridCell.Tab.1.center" timestamp="1610707803653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610686974373" />
-    <state width="1149" height="257" key="GridCell.Tab.1.left" timestamp="1610686974373">
+    <state width="1491" height="253" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610707803653" />
+    <state width="1491" height="253" key="GridCell.Tab.1.left" timestamp="1610707803653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610686974373" />
-    <state width="1149" height="257" key="GridCell.Tab.1.right" timestamp="1610686974373">
+    <state width="1491" height="253" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610707803653" />
+    <state width="1491" height="253" key="GridCell.Tab.1.right" timestamp="1610707803653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1149" height="257" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610686974373" />
+    <state width="1491" height="253" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610707803653" />
     <state x="337" y="36" key="SettingsEditor" timestamp="1609738970996">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -327,6 +322,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="148" y="148" width="1139" height="762" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1603855876665" />
+    <state x="541" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610694220710">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="541" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1610694220710" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,8 +337,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java</url>
-          <line>137</line>
+          <line>138</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabLichChieu.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
