@@ -60,7 +60,7 @@ public class TabSapChieu extends Fragment {
                 phim.setPoster(jb.getString("hinh_anh"));
                 phim.setDiem(Float.parseFloat(jb.getString("diem")));
                 phim.setTuoi(Integer.parseInt(jb.getString("tuoi")));
-                phim.setTheLoai(jb.getString("id_the_loai"));
+                phim.setTheLoai("Tình cảm");
                 phim.setThoiluong(jb.getString("thoi_luong"));
                 phim.setKhoichieu(jb.getString("khoi_chieu"));
                 phim.setTomtat(jb.getString("tom_tat"));

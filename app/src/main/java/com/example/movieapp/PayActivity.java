@@ -34,14 +34,17 @@ public class PayActivity extends AppCompatActivity {
     TextView txtNgay;
     TextView txtChiNhanh;
     TextView txtTongTien;
+    String idGhe;
+    String idLich;
 
 
     private void setDetail(){
         Intent intent = getIntent();
         String idMovie = intent.getStringExtra("MovieID");
-        String idGhe = intent.getStringExtra("IDGhe");
+        idGhe = intent.getStringExtra("IDGhe");
         String idChiNhanh = intent.getStringExtra("IDChiNhanh");
         String idRap = intent.getStringExtra("IDRap");
+        idLich = intent.getStringExtra("IDLich");
 
         String name = intent.getStringExtra("MovieName");
         String poster = intent.getStringExtra("MoviePoster");
@@ -67,5 +70,12 @@ public class PayActivity extends AppCompatActivity {
         txtGhe.setText(ghe);
         txtTongTien.setText(GiaVe);
         Picasso.get().load("http://dashboard-movie-web.herokuapp.com/images/"+poster).into(anhDaiDien);
+    }
+
+    public void btnThanhToan(View view) {
+        Intent intent = new Intent(this, BankActivity.class);
+        intent.putExtra("IDGHE" , idGhe);
+        intent.putExtra("IDLICH", idLich);
+        startActivity(intent);
     }
 }

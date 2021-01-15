@@ -187,7 +187,7 @@
                     android:background="#FFF1CE"
                     android:gravity="start|center_vertical"
                     android:paddingStart="10dp"
-                    android:text="Điểm tích lũy / thẻ quà tặng" />
+                    android:text="Thẻ quà tặng" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -197,15 +197,6 @@
                     android:gravity="start|center_vertical"
                     android:paddingStart="10dp"
                     android:text="mã khuyến mãi" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#FFF1CE"
-                    android:gravity="start|center_vertical"
-                    android:paddingStart="10dp"
-                    android:text="voucher" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -251,18 +242,6 @@
                         android:layout_height="wrap_content"
                         android:background="#FFF1CE"
                         android:text="VISA card" />
-
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#FFF1CE"
-                        android:text="Momo" />
-
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#FFF1CE"
-                        android:text="ZaloPay" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -279,7 +258,8 @@
                 android:text="Thanh toán"
                 android:textColor="#fff"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="btnThanhToan"/>
 
         </LinearLayout>
     </ScrollView>

@@ -1,7 +1,15 @@
 package com.example.movieapp;
 
+import android.icu.text.Edits;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.sql.Date;
+import java.util.Iterator;
 
 public class Ve implements Serializable {
     private int IDPhim;
@@ -12,14 +20,17 @@ public class Ve implements Serializable {
     private String NgayMua;
     private int TrangThai;
 
-    public Ve(int IDPhim, int IDLichChieu, int IDKhachHang, int IDGhe, double giaVe, String ngayMua, int trangThai) {
-        this.IDPhim = IDPhim;
+    public Ve(int IDLichChieu, int IDKhachHang, int IDGhe, double giaVe) {
         this.IDLichChieu = IDLichChieu;
         this.IDKhachHang = IDKhachHang;
         this.IDGhe = IDGhe;
         GiaVe = giaVe;
-        NgayMua = ngayMua;
-        TrangThai = trangThai;
+    }
+
+    public Ve(int IDLichChieu, int IDKhachHang, int IDGhe) {
+        this.IDLichChieu = IDLichChieu;
+        this.IDKhachHang = IDKhachHang;
+        this.IDGhe = IDGhe;
     }
 
     public Ve() {
@@ -86,5 +97,39 @@ public class Ve implements Serializable {
 
     public void setTrangThai(int trangThai) {
         TrangThai = trangThai;
+    }
+
+    public  String packData()
+    {
+        JSONObject jo=new JSONObject();
+        StringBuffer packedData=new StringBuffer();
+        try {
+            jo.put("lich_chieu", getIDLichChieu());
+            jo.put("khach_hang", getIDKhachHang());
+            jo.put("ghe", getIDGhe());
+            Boolean firstValue=true;
+            Iterator it=jo.keys();
+            do {
+                String key=it.next().toString();
+                String value=jo.get(key).toString();
+                if(firstValue)
+                {
+                    firstValue=false;
+                }else
+                {
+                    packedData.append("&");
+                }
+                try {
+                    packedData.append(URLEncoder.encode(key,"UTF-8"));
+                    packedData.append("=");
+                    packedData.append(URLEncoder.encode(value,"UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }while (it.hasNext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return  packedData.toString();
     }
 }

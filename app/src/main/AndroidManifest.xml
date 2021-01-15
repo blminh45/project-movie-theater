@@ -10,10 +10,9 @@
         android:label="FiveBoys "
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityMenu"></activity>
-        android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".ChooseChairActivity"></activity>
+        <activity android:name=".BankActivity"></activity>
+        <activity android:name=".ActivityMenu" />
+        <activity android:name=".ChooseChairActivity" />
         <activity
             android:name=".WatchTrailerActivity"
             android:screenOrientation="landscape" />

@@ -65,11 +65,12 @@ public class TabDangChieu extends Fragment {
                 phim.setPoster(jb.getString("hinh_anh"));
                 phim.setDiem(Float.parseFloat(jb.getString("diem")));
                 phim.setTuoi(Integer.parseInt(jb.getString("tuoi")));
-                phim.setTheLoai(jb.getString("id_the_loai"));
+                phim.setTheLoai("Tình cảm");
                 phim.setThoiluong(jb.getString("thoi_luong"));
                 phim.setKhoichieu(jb.getString("khoi_chieu"));
                 phim.setTomtat(jb.getString("tom_tat"));
                 phim.setTrailer(jb.getString("trailer"));
+                phim.setGia(Double.parseDouble(jb.getString("gia_phim")));
                 phim.setTrangThai(Integer.parseInt(jb.getString("trang_thai")));
                 if(Integer.parseInt(jb.getString("trang_thai"))==1){
                     listDangChieu.add(phim);

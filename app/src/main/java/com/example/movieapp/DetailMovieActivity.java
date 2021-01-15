@@ -107,14 +107,14 @@ public class DetailMovieActivity extends AppCompatActivity {
         String iGhe = txtGhe.getText().toString();
         String iNgay = txtNgay.getText().toString();
         String name = txtName.getText().toString();
-        if(iTime.equals(" 09:00 ")|| iTime.equals(" 12:00 ")){
-            GiaGio = 30.0;
+        if(iTime.equals(" 09:00:00 ")|| iTime.equals(" 12:00:00 ")){
+            GiaGio = 30000.0;
         }
-        if(iTime.equals(" 15:00 ")|| iTime.equals(" 18:00 ")){
-            GiaGio = 40.0;
+        if(iTime.equals(" 15:00:00 ")){
+            GiaGio = 40000.0;
         }
-        if(iTime.equals(" 21:00 ")){
-            GiaGio = 50.0;
+        if(iTime.equals(" 21:00:00 ")|| iTime.equals(" 18:00:00 ")){
+            GiaGio = 50000.0;
         }
 
         if(iTime.equals("")||iTime.equals(null)){
@@ -136,21 +136,26 @@ public class DetailMovieActivity extends AppCompatActivity {
             intent.putExtra("MoviePoster", phim.getPoster());
 
             String[] itemrap = rap.split("-");
-            String[] itemchinhanh = chinhanh.split("-");
+//            String[] itemchinhanh = chinhanh.split("-");
 
             intent.putExtra("IDRap", itemrap[0]);
             intent.putExtra("MovieRap", itemrap[1]);
 
-            intent.putExtra("IDChiNhanh", itemchinhanh[0]);
-            intent.putExtra("MovieChiNhanh" , itemchinhanh[1]);
+//            intent.putExtra("IDChiNhanh", itemchinhanh[0]);
+            intent.putExtra("MovieChiNhanh" , chinhanh);
 
             intent.putExtra("MovieTime", iTime);
             intent.putExtra("MovieNgay", iNgay);
 
-            intent.putExtra("IDGhe", gheNhan.getIDGhe());
+            intent.putExtra("IDGhe", Integer.toString(gheNhan.getIDGhe()));
+            Toast.makeText(this, "GHE: "+Integer.toString(gheNhan.getIDGhe()), Toast.LENGTH_SHORT).show();
             intent.putExtra("MovieGhe", iGhe);
 
-            Toast.makeText(this, "Ghe: "+gheNhan.getIDGhe()+"-IDPhim:"+phim.getIDPhim()+"-IDRap:"+itemrap[0]+"-TenRap:"+itemrap[1]+"-IDChiNhanh:"+itemchinhanh[0]+"-TenChiNhanh:"+itemchinhanh[1], Toast.LENGTH_SHORT).show();
+
+            TextView idL = findViewById(R.id.idLich);
+            intent.putExtra("IDLich", idL.getText());
+
+//            Toast.makeText(this, "Ghe: "+gheNhan.getIDGhe()+"-IDPhim:"+phim.getIDPhim()+"-IDRap:"+itemrap[0]+"-TenRap:"+itemrap[1], Toast.LENGTH_SHORT).show();
 
 
             GiaPhim =phim.getGia();

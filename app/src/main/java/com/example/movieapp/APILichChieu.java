@@ -7,11 +7,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class APIPhim {
+public class APILichChieu {
     static HttpURLConnection urlConnection = null;
-    static String uri="http://dashboard-movie-web.herokuapp.com/api/phim/danh-sach-phim";
-//    static String uri="http://dashboard-movie-web.herokuapp.com/api/phim/phim-theloai";
-    static  String getPhim(){
+    static String uri="http://dashboard-movie-web.herokuapp.com/api/chitietlichchieu";
+    static  String getLichChieu(){
         BufferedReader reader = null;
         String result = null;
         String url = uri+"?get";

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FCFDFD"
     android:orientation="vertical"
     tools:context=".DetailMovieActivity">
 
@@ -47,291 +48,61 @@
             </LinearLayout>
             //Chon rạp
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                //Chon ngay
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Hôm nay"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="80dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="05/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Thứ 2"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="60dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="06/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Thứ 3"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="60dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="07/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Thứ 4"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="60dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="08/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Thứ 5"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="60dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="09/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Thứ 6"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="60dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="10/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-
-                    //item
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Thứ 7"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Space
-                            android:layout_width="60dp"
-                            android:layout_height="10dp"
-                            android:layout_weight="0" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="11/04"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-                    //item
-
-                </LinearLayout>
-                //Chon ngay
-            </HorizontalScrollView>
-
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/idLich"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Hôm nay, Ngày 5 Tháng 4 "
+                android:background="#009688"
+                android:text="NGÀY CHIẾU"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FDFAFA"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#009688"
+                android:text="NGÀY CHIẾU"
+                android:textAlignment="center"
+                android:textColor="#FDFAFA"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <GridView
+                android:id="@+id/NgayChieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:numColumns="3" />
+
+            <TextView
+                android:id="@+id/txtNgayChieu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#FF5722"
+                android:textAlignment="center"
+                android:textColor="#FDF8F8"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Galaxy Nguyễn Du"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="2D PHỤ ĐỂ"
-                android:textColor="#000000"
-                android:textSize="16sp" />
+                android:background="#009688"
+                android:text="GIỜ CHIẾU"
+                android:textAlignment="center"
+                android:textColor="#FDFAFA"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <GridView
                 android:id="@+id/GioChieu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:numColumns="5" />
+                android:numColumns="3" />
 
             <LinearLayout
                 android:layout_width="match_parent"
