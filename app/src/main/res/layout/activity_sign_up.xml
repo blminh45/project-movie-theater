@@ -64,13 +64,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username"
+            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tài Khoản"
+            android:hint="Địa chỉ"
             app:counterEnabled="true"
             app:counterMaxLength="15"
-            android:transitionName="username_tran"
+            android:transitionName="address_tran"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -78,6 +78,7 @@
                 android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/birthLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:hintEnabled="false"
