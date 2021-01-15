@@ -35,7 +35,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Picasso.get().load("http://dashboard-movie-web.herokuapp.com/images/"+ listimg.get(position)).into(holder.poster);
     }
 
@@ -46,7 +46,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView poster;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             poster = itemView.findViewById(R.id.img_main);

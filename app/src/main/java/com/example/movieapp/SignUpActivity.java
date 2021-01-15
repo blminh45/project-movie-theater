@@ -52,12 +52,12 @@ public class SignUpActivity extends AppCompatActivity {
         regBirthLO = findViewById(R.id.birthLayout);
         mImageView = findViewById(R.id.img);
         chooseBtn = findViewById(R.id.choose_image_btn);
-
+        //Xử lí chọn ngày tháng năm
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
-
+        //Chọn ngày tháng năm
         regBirth.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
                  datePickerDialog.show();
             }
         });
-
+        //Gán ngày tháng năm
         setListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -78,6 +78,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         };
     }
+    //Ràng buộc dl nhập vào:
     private Boolean validateName(){
         String val = regName.getEditText().getText().toString();
         if(val.isEmpty())
@@ -165,6 +166,8 @@ public class SignUpActivity extends AppCompatActivity {
             return true;
         }
     }
+    //:Ràng buộc dl nhập vào
+    //Phương thức đăng ký
     public void registerUser(View view) {
         String ten,diachi,sdt,email,matkhau = null,ngaysinh,anhdaidien;
         ten = regName.getEditText().getText().toString();
@@ -178,19 +181,27 @@ public class SignUpActivity extends AppCompatActivity {
         }
         ngaysinh=regBirth.getText().toString();
         anhdaidien="img.png";
+        //Kiểm tra ràng buộc
         if(!validateName() | !validateAddress() | !validateEmail() | !validatePassword() | !validatePhone() | !validateBirth()){
             Toast.makeText(SignUpActivity.this,"Đăng ký thất bại",Toast.LENGTH_LONG).show();
         }
         else{
+            //Thêm mới
             KhachHang inserKH =new KhachHang(ten,diachi,sdt,ngaysinh,email,anhdaidien,matkhau);
             try {
                 new KhachHangAPIGetting(SignUpActivity.this).execute(inserKH).get();
+                Intent intent = new Intent(SignUpActivity.this,LoginActivity.class);
+                intent.putExtra("count_signup",1);
+                intent.putExtra("sdt",sdt);
+                intent.putExtra("mk",regPassword.getEditText().getText().toString());
+                startActivity(intent);
                 Toast.makeText(SignUpActivity.this,"Đăng ký thành công",Toast.LENGTH_SHORT).show();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            finish();
         }
     }
 
@@ -208,7 +219,6 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode,int resultCode,Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == IMAGE_PICK_CODE) {
-            //mImageView.setImageURI(data.getData());
             try {
                 InputStream inputStream = getContentResolver().openInputStream(data.getData());
                 Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
@@ -239,6 +249,7 @@ public class SignUpActivity extends AppCompatActivity {
         startActivity(intent,options.toBundle());
         finish();
     }
+    //Mã hóa
     private String convertHashToString(String text) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] hashInBytes = md.digest(text.getBytes(StandardCharsets.UTF_8));
