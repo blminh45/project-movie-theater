@@ -13,37 +13,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cee0153-80fc-4444-9704-c7bc21d98422" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/APIRap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/MainAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Rap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/RapAPIGetting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_trang_chu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChiNhanh.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChiNhanh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ChooseChairActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/DetailMovieActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ghe.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Ghe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieApdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/ListMovieApdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/PayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/PayActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Phim.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/Phim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabDangChieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabDangChieu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabLichChieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabLichChieu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabSapChieu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabSapChieu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabTatCa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabTatCa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabThongTin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TabThongTin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TatCaAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/movieapp/TatCaAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_movie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_detail_movie.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_XL_API_24]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
